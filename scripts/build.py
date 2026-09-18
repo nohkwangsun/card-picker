@@ -53,6 +53,7 @@ def build():
         raw_fields = {k: v for k, v in fields.items() if k not in TOP_LEVEL_FIELDS}
         tag_entry = tag_cards.get(name)
         benefits = tag_entry["benefits"] if tag_entry else []
+        perks = tag_entry.get("perks") if tag_entry else None
 
         cards_out.append({
             "id": slugify(name, seen_slugs),
@@ -65,6 +66,7 @@ def build():
             "familyCardFeeRaw": fields.get("가족카드"),
             "raw": raw_fields,
             "benefits": benefits,
+            "perks": perks,
             "hasStructuredBenefits": bool(benefits),
             "researched": bool(raw_fields) or bool(benefits),
         })

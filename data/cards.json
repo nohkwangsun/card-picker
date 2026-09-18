@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-18T07:01:49+00:00",
+    "generatedAt": "2026-09-18T07:35:15+00:00",
     "sourceFile": "card_data.xlsx",
     "cardCount": 19,
     "taggedCardCount": 10
@@ -175,6 +175,29 @@
           "note": "직판 5마일/1,000원 (일반 온라인쇼핑과 다름, 참고용)"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": null,
+          "unlimited": true,
+          "note": "The Lounge 무제한 (스카이허브, 마티나, 해외공항), 전월실적 50만원"
+        },
+        "valet": {
+          "visitsPerYear": null,
+          "unlimited": true,
+          "note": "공항 및 호텔 발레파킹, 전월실적 50만원 (횟수 제한 명시 없음)"
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": true
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -214,6 +237,28 @@
           "note": "공과금/학비/유가증권/보험/교통비 제외"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": null,
+          "unlimited": true,
+          "note": "무제한 PP카드(무실적) + 마티나 골드 6회(전월실적 50만원)"
+        },
+        "valet": {
+          "visitsPerYear": 10,
+          "note": "공항/호텔 발레파킹 10회, 전월실적 50만원"
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": true
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -277,6 +322,28 @@
           "note": "6만원 이상 결제 시 3만원 할인 (아웃백, 호텔 레스토랑 등)"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 10,
+          "unlimited": false,
+          "note": "The Lounge 10회(전월실적 50만원) + Centurion Lounge/Delta Sky Club(횟수 무관 이용 가능, 미포함)"
+        },
+        "valet": {
+          "visitsPerYear": 60,
+          "note": "공항/호텔 발레파킹 월5회(연 60회 환산), 전월실적 50만원"
+        },
+        "airport": {
+          "visitsPerYear": 12,
+          "note": "공항 리무진/철도 연 12회, 전월실적 50만원"
+        },
+        "membership": {
+          "has": true,
+          "note": "Hilton Honors Gold, Marriott Bonvoy Gold Elite, Radisson Rewards Premium, The Tablet Plus, Hertz Five Star"
+        },
+        "mileage": {
+          "has": false
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -361,6 +428,28 @@
           "note": "학원, 편의점, 커피전문점 5%"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 13,
+          "unlimited": false,
+          "note": "The Lounge 10회 + 국내공항라운지 3회, 전월실적 50만원"
+        },
+        "valet": {
+          "visitsPerYear": 20,
+          "note": "국내호텔 연15회 + 인천공항 연5회, 전월실적 50만원"
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -440,6 +529,28 @@
           "note": "해외/아울렛/면세점/골프 5% 포인트 적립"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 0,
+          "unlimited": false,
+          "note": null
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -504,6 +615,28 @@
           "note": "해외 오프라인 삼성페이 결제 5%"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 2,
+          "unlimited": false,
+          "note": "The Lounge 2회(월1회 한도), 전월실적 50만원"
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -545,6 +678,28 @@
           "note": "국내 온오프라인 0.7%"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 0,
+          "unlimited": false,
+          "note": null
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -559,6 +714,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     },
@@ -636,6 +792,28 @@
           "note": "주유소 10% 할인"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 0,
+          "unlimited": false,
+          "note": null
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -650,6 +828,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     },
@@ -664,6 +843,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     },
@@ -678,6 +858,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     },
@@ -692,6 +873,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     },
@@ -706,6 +888,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     },
@@ -771,6 +954,28 @@
           "note": "주말 골프장/호텔/면세점 2마일/1,000원"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 9,
+          "unlimited": false,
+          "note": "The Lounge 6회(전년 이용실적 1000만원) + 국내공항라운지 3회(전월실적 50만원)"
+        },
+        "valet": {
+          "visitsPerYear": 36,
+          "note": "국내호텔 연24회 + 인천공항 연12회, 전월실적 50만원"
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": true
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -800,6 +1005,28 @@
           "note": "해외 결제 2% 할인"
         }
       ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 0,
+          "unlimited": false,
+          "note": null
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
       "hasStructuredBenefits": true,
       "researched": true
     },
@@ -814,6 +1041,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     },
@@ -828,6 +1056,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     },
@@ -842,6 +1071,7 @@
       "familyCardFeeRaw": null,
       "raw": {},
       "benefits": [],
+      "perks": null,
       "hasStructuredBenefits": false,
       "researched": false
     }

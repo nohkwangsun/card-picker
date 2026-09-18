@@ -39,19 +39,40 @@
         { "categories": ["domesticAll"], "type": "mileage", "rate": 0.001, "minCardSpend": 500000, "condition": "전월실적 50만원", "note": "국내 1마일/1,000원" },
         { "categories": ["overseasAll"], "type": "mileage", "rate": 0.003, "minCardSpend": 500000, "condition": "전월실적 50만원", "note": "해외 3마일/1,000원" },
         { "categories": ["onlineShopping"], "type": "mileage", "rate": 0.005, "minCardSpend": 500000, "condition": "전월실적 50만원, 현대카드 직판(직영몰) 한정", "note": "직판 5마일/1,000원 (일반 온라인쇼핑과 다름, 참고용)" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": null, "unlimited": true, "note": "The Lounge 무제한 (스카이허브, 마티나, 해외공항), 전월실적 50만원" },
+        "valet": { "visitsPerYear": null, "unlimited": true, "note": "공항 및 호텔 발레파킹, 전월실적 50만원 (횟수 제한 명시 없음)" },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": true }
+      }
     },
     "퍼플": {
       "benefits": [
         { "categories": ["domesticAll"], "excludeCategories": ["utility","telecom","transit","taxi"], "type": "accrual", "rate": 0.015, "minCardSpend": 500000, "condition": "마일리지 또는 M포인트 중 택1 (전월실적 50만원, 마일리지 옵션 기준으로 추정 적용)", "note": "공과금/학비/유가증권/보험/교통비 제외" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": null, "unlimited": true, "note": "무제한 PP카드(무실적) + 마티나 골드 6회(전월실적 50만원)" },
+        "valet": { "visitsPerYear": 10, "note": "공항/호텔 발레파킹 10회, 전월실적 50만원" },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": true }
+      }
     },
     "아멕스 플래티넘 2": {
       "benefits": [
         { "categories": ["domesticAll", "overseasAll"], "type": "accrual", "rate": 0.001, "minCardSpend": 500000, "condition": "전월실적 50만원", "note": "기본 적립" },
         { "categories": ["overseasOffline","overseasOnline","hotel","flight","golf","dutyfree"], "type": "accrual", "rate": 0.005, "minCardSpend": 500000, "condition": "전월실적 50만원", "note": "해외/호텔/항공/골프/면세 우대적립" },
         { "categories": ["dining"], "type": "fixedDiscount", "amount": 30000, "minSpend": 60000, "minCardSpend": 500000, "condition": "전월실적 50만원", "note": "6만원 이상 결제 시 3만원 할인 (아웃백, 호텔 레스토랑 등)" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 10, "unlimited": false, "note": "The Lounge 10회(전월실적 50만원) + Centurion Lounge/Delta Sky Club(횟수 무관 이용 가능, 미포함)" },
+        "valet": { "visitsPerYear": 60, "note": "공항/호텔 발레파킹 월5회(연 60회 환산), 전월실적 50만원" },
+        "airport": { "visitsPerYear": 12, "note": "공항 리무진/철도 연 12회, 전월실적 50만원" },
+        "membership": { "has": true, "note": "Hilton Honors Gold, Marriott Bonvoy Gold Elite, Radisson Rewards Premium, The Tablet Plus, Hertz Five Star" },
+        "mileage": { "has": false }
+      }
     },
     "헤리티지 스마트": {
       "benefits": [
@@ -60,7 +81,14 @@
         { "categories": ["mart","dutyfree"], "type": "discount", "rate": 0.05, "cap": 50000, "minCardSpend": 400000, "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)", "note": "백화점, 인터넷면세점 5%" },
         { "categories": ["golf"], "type": "discount", "rate": 0.05, "cap": 50000, "minCardSpend": 400000, "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)", "note": "골프연습장 등 스포츠 5%" },
         { "categories": ["convenience","cafe"], "type": "discount", "rate": 0.05, "cap": 50000, "minCardSpend": 400000, "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)", "note": "학원, 편의점, 커피전문점 5%" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 13, "unlimited": false, "note": "The Lounge 10회 + 국내공항라운지 3회, 전월실적 50만원" },
+        "valet": { "visitsPerYear": 20, "note": "국내호텔 연15회 + 인천공항 연5회, 전월실적 50만원" },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      }
     },
     "클래식 Y": {
       "benefits": [
@@ -69,7 +97,14 @@
         { "categories": ["flight"], "type": "discount", "rate": 0.15, "cap": 60000, "minCardSpend": 300000, "condition": "전월실적 30만원", "note": "진에어(JinAir) 15% 할인" },
         { "categories": ["domesticAll"], "type": "accrual", "rate": 0.007, "minCardSpend": 0, "condition": null, "note": "마이신한포인트 0.7%" },
         { "categories": ["overseasOffline","overseasOnline","dutyfree","golf"], "type": "accrual", "rate": 0.05, "minCardSpend": 0, "condition": null, "note": "해외/아울렛/면세점/골프 5% 포인트 적립" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 0, "unlimited": false, "note": null },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      }
     },
     "ID 글로벌": {
       "benefits": [
@@ -77,13 +112,27 @@
         { "categories": ["ott"], "type": "discount", "rate": 0.5, "cap": 20000, "minCardSpend": 500000, "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)", "note": "국내 인앱결제/디지털콘텐츠(구글,앱스,넷플,디즈니,유튜브,쿠팡,네이버페이) 50%" },
         { "categories": ["overseasOffline","overseasOnline"], "type": "feeDiscount", "rate": 0.012, "cap": null, "minCardSpend": 0, "condition": "무실적", "note": "해외결제 수수료 1.2%(1+0.2%p) 결제일할인, 한도 없음" },
         { "categories": ["overseasOffline"], "type": "discount", "rate": 0.05, "cap": 20000, "minCardSpend": 500000, "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)", "note": "해외 오프라인 삼성페이 결제 5%" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 2, "unlimited": false, "note": "The Lounge 2회(월1회 한도), 전월실적 50만원" },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      }
     },
     "ID 해외 3.5": {
       "benefits": [
         { "categories": ["overseasOffline","overseasOnline"], "type": "discount", "rate": 0.035, "cap": null, "minCardSpend": 0, "condition": "무실적, 한도 없음", "note": "해외 온오프라인 3.5%" },
         { "categories": ["domesticAll"], "type": "discount", "rate": 0.007, "cap": null, "minCardSpend": 0, "condition": "무실적, 한도 없음", "note": "국내 온오프라인 0.7%" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 0, "unlimited": false, "note": null },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      }
     },
     "Mr.Life": {
       "benefits": [
@@ -92,7 +141,14 @@
         { "categories": ["onlineShopping","taxi","dining"], "type": "discount", "rate": 0.10, "cap": 10000, "minCardSpend": 300000, "condition": "21시~09시, 일1회, 월10회, 전월실적 구간별 승인한도 1만원", "note": "온라인/택시/심야 식음료 10% 할인" },
         { "categories": ["mart"], "type": "discount", "rate": 0.10, "cap": 50000, "minCardSpend": 300000, "condition": "주말, 일1회, 전월실적 구간별 승인한도 5만원", "note": "대형마트 10% 할인" },
         { "categories": ["gas"], "type": "discount", "rate": 0.10, "cap": 100000, "minCardSpend": 300000, "condition": "주말, 일1회 승인한도 10만원/월승인한도 30만원, 전월실적 구간", "note": "주유소 10% 할인" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 0, "unlimited": false, "note": null },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      }
     },
     "BeV Ⅴ카드 (스카이패스형)": {
       "benefits": [
@@ -100,12 +156,26 @@
         { "categories": ["cafe","convenience","utility"], "type": "mileage", "rate": 0.001, "minCardSpend": 500000, "condition": "평일, 전월실적 50만원, 월 최대 3만 마일", "note": "평일 커피/편의점/자동납부(관리비,통신사,도시가스) 1마일/1,000원" },
         { "categories": ["domesticAll"], "type": "mileage", "rate": 0.001, "minCardSpend": 500000, "condition": "주말, 전월실적 50만원, 월 최대 3만 마일", "note": "주말 기본 1마일/1,000원" },
         { "categories": ["golf","hotel","dutyfree"], "type": "mileage", "rate": 0.002, "minCardSpend": 500000, "condition": "주말, 전월실적 50만원, 월 최대 3만 마일", "note": "주말 골프장/호텔/면세점 2마일/1,000원" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 9, "unlimited": false, "note": "The Lounge 6회(전년 이용실적 1000만원) + 국내공항라운지 3회(전월실적 50만원)" },
+        "valet": { "visitsPerYear": 36, "note": "국내호텔 연24회 + 인천공항 연12회, 전월실적 50만원" },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": true }
+      }
     },
     "네이버페이 머니카드": {
       "benefits": [
         { "categories": ["overseasOffline","overseasOnline"], "type": "discount", "rate": 0.02, "cap": null, "minCardSpend": 0, "condition": "무실적, 해외 수수료 면제", "note": "해외 결제 2% 할인" }
-      ]
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 0, "unlimited": false, "note": null },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      }
     }
   }
 }
