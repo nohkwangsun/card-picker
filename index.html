@@ -113,11 +113,19 @@ tr.clickable:hover{background:var(--accent-weak);}
         <div class="field"><label>카드사</label><select id="fIssuer"><option value="">전체</option></select></div>
         <div class="field"><label>연회비 이하</label><input type="number" id="fFee" placeholder="예: 100000"></div>
         <div class="field"><label>&nbsp;</label><label style="display:flex;align-items:center;gap:5px;font-size:12.5px;"><input type="checkbox" id="fTaggedOnly" style="width:auto;">구조화된 카드만</label></div>
+        <div class="field" style="margin-left:auto;">
+          <label>&nbsp;</label>
+          <div class="row" style="gap:0;">
+            <button class="btn secondary" id="viewTableBtn" style="border-radius:8px 0 0 8px;">테이블</button>
+            <button class="btn ghost" id="viewExpandBtn" style="border-radius:0 8px 8px 0;margin-left:-1px;">전체 펼쳐보기</button>
+          </div>
+        </div>
       </div>
-      <table>
+      <table id="compareTable">
         <thead><tr><th>그룹</th><th>카드사</th><th>카드명</th><th>연회비</th><th>가족카드</th><th>혜택계산</th></tr></thead>
         <tbody id="compareBody"></tbody>
       </table>
+      <div id="compareExpanded" style="display:none;"></div>
     </div>
   </section>
 
@@ -296,39 +304,75 @@ function populateFilterSelects(){
   gSel.innerHTML = '<option value="">전체</option>' + uniqueVals('group').map(function(g){return '<option value="'+g+'">'+g+'</option>';}).join('');
   iSel.innerHTML = '<option value="">전체</option>' + uniqueVals('issuer').map(function(i){return '<option value="'+i+'">'+i+'</option>';}).join('');
 }
-function renderCompare(){
+function getFilteredCards(){
   var q = document.getElementById('fSearch').value.trim().toLowerCase();
   var g = document.getElementById('fGroup').value;
   var iss = document.getElementById('fIssuer').value;
   var fee = document.getElementById('fFee').value;
   var taggedOnly = document.getElementById('fTaggedOnly').checked;
+  return state.cards.filter(function(c){
+    if(q && c.name.toLowerCase().indexOf(q)===-1) return false;
+    if(g && c.group!==g) return false;
+    if(iss && c.issuer!==iss) return false;
+    if(fee && !(c.annualFee!=null && c.annualFee<=Number(fee))) return false;
+    if(taggedOnly && !c.hasStructuredBenefits) return false;
+    return true;
+  });
+}
+function renderCompare(){
   var body = document.getElementById('compareBody');
   body.innerHTML = '';
-  state.cards
-    .filter(function(c){
-      if(q && c.name.toLowerCase().indexOf(q)===-1) return false;
-      if(g && c.group!==g) return false;
-      if(iss && c.issuer!==iss) return false;
-      if(fee && !(c.annualFee!=null && c.annualFee<=Number(fee))) return false;
-      if(taggedOnly && !c.hasStructuredBenefits) return false;
-      return true;
-    })
-    .forEach(function(c){
-      var tr = el('tr', {class:'clickable', onclick: function(){ showDetail(c.id); document.querySelector('nav.tabs button[data-tab="detail"]').click(); }}, [
-        el('td', {}, [el('span', {class:'badge '+groupBadgeClass(c.group), text: c.group||'기타'})]),
-        el('td', {text: c.issuer||'-'}),
-        el('td', {text: c.name}),
-        el('td', {text: c.annualFeeRaw!=null ? won(c.annualFee) : (c.annualFeeRaw||'-')}),
-        el('td', {text: c.familyCardFeeRaw!=null ? (typeof c.familyCardFee==='number'? won(c.familyCardFee) : c.familyCardFeeRaw) : '-'}),
-        el('td', {}, [el('span', {class:'badge '+(c.hasStructuredBenefits?'tagged':'untagged'), text: c.hasStructuredBenefits?'가능':'미구조화'})])
-      ]);
-      body.appendChild(tr);
-    });
+  getFilteredCards().forEach(function(c){
+    var tr = el('tr', {class:'clickable', onclick: function(){ showDetail(c.id); document.querySelector('nav.tabs button[data-tab="detail"]').click(); }}, [
+      el('td', {}, [el('span', {class:'badge '+groupBadgeClass(c.group), text: c.group||'기타'})]),
+      el('td', {text: c.issuer||'-'}),
+      el('td', {text: c.name}),
+      el('td', {text: c.annualFeeRaw!=null ? won(c.annualFee) : (c.annualFeeRaw||'-')}),
+      el('td', {text: c.familyCardFeeRaw!=null ? (typeof c.familyCardFee==='number'? won(c.familyCardFee) : c.familyCardFeeRaw) : '-'}),
+      el('td', {}, [el('span', {class:'badge '+(c.hasStructuredBenefits?'tagged':'untagged'), text: c.hasStructuredBenefits?'가능':'미구조화'})])
+    ]);
+    body.appendChild(tr);
+  });
+  renderCompareExpanded();
 }
+function renderCompareExpanded(){
+  if(!state) return;
+  var wrap = document.getElementById('compareExpanded');
+  if(wrap.style.display==='none') return;
+  wrap.innerHTML = '';
+  var cards = getFilteredCards();
+  wrap.appendChild(el('div', {class:'small muted', style:'margin-bottom:10px;', text: cards.length+'개 카드'}));
+  cards.forEach(function(c){
+    var panel = el('div', {class:'panel', style:'margin-bottom:12px;padding:14px 16px;'});
+    panel.appendChild(buildCardDetailBody(c));
+    wrap.appendChild(panel);
+  });
+}
+function setCompareView(mode){
+  var tableEl = document.getElementById('compareTable');
+  var expandEl = document.getElementById('compareExpanded');
+  var tableBtn = document.getElementById('viewTableBtn');
+  var expandBtn = document.getElementById('viewExpandBtn');
+  if(mode==='expand'){
+    tableEl.style.display='none'; expandEl.style.display='block';
+    tableBtn.className='btn ghost'; expandBtn.className='btn secondary';
+    renderCompareExpanded();
+  } else {
+    tableEl.style.display='table'; expandEl.style.display='none';
+    tableBtn.className='btn secondary'; expandBtn.className='btn ghost';
+  }
+  try{ localStorage.setItem('card-picker-compare-view', mode); }catch(e){}
+}
+document.getElementById('viewTableBtn').addEventListener('click', function(){ setCompareView('table'); });
+document.getElementById('viewExpandBtn').addEventListener('click', function(){ setCompareView('expand'); });
 ['fSearch','fGroup','fIssuer','fFee','fTaggedOnly'].forEach(function(id){
   document.getElementById(id).addEventListener('input', renderCompare);
   document.getElementById(id).addEventListener('change', renderCompare);
 });
+try{
+  var savedView = localStorage.getItem('card-picker-compare-view');
+  if(savedView==='expand') setCompareView('expand');
+}catch(e){}
 
 /* ---------- 카드 상세 탭 ---------- */
 var RAW_LABEL_ORDER = ['연간 혜택','혜택','멤버십','마일리지','할인','적립','라운지','공항','발레파킹','Visa','카드사','이벤트','그외'];
@@ -340,12 +384,9 @@ function populateDetailSelect(){
 function benefitTypeLabel(t){
   return {discount:'청구할인', accrual:'포인트적립', mileage:'마일리지적립', feeDiscount:'수수료할인', fixedDiscount:'정액할인'}[t] || t;
 }
-function showDetail(id){
-  var c = state.cards.find(function(x){return x.id===id;});
-  if(!c) return;
-  document.getElementById('detailSelect').value = id;
-  var body = document.getElementById('detailBody');
-  body.innerHTML = '';
+function buildCardDetailBody(c, opts){
+  opts = opts || {};
+  var body = el('div', {});
   var head = el('div', {class:'row', style:'margin-bottom:10px;'}, [
     el('span', {class:'badge '+groupBadgeClass(c.group), text: c.group||'기타'}),
     el('b', {text: c.name, style:'font-size:17px;'}),
@@ -383,12 +424,27 @@ function showDetail(id){
     body.appendChild(tbl);
   }
 
-  body.appendChild(el('div', {class:'section-title', text:'원문 (엑셀)'}));
-  RAW_LABEL_ORDER.concat(Object.keys(c.raw||{}).filter(function(k){return RAW_LABEL_ORDER.indexOf(k)===-1;})).forEach(function(label){
-    if(!c.raw || !c.raw[label]) return;
-    body.appendChild(el('div', {class:'small', style:'font-weight:700;margin-top:10px;', text:label}));
-    body.appendChild(el('div', {class:'pre', text: String(c.raw[label])}));
-  });
+  if(!opts.skipRaw){
+    body.appendChild(el('div', {class:'section-title', text:'원문 (엑셀)'}));
+    var rawKeys = RAW_LABEL_ORDER.concat(Object.keys(c.raw||{}).filter(function(k){return RAW_LABEL_ORDER.indexOf(k)===-1;}));
+    var any = false;
+    rawKeys.forEach(function(label){
+      if(!c.raw || !c.raw[label]) return;
+      any = true;
+      body.appendChild(el('div', {class:'small', style:'font-weight:700;margin-top:10px;', text:label}));
+      body.appendChild(el('div', {class:'pre', text: String(c.raw[label])}));
+    });
+    if(!any) body.appendChild(el('div', {class:'small muted', text:'원문 없음'}));
+  }
+  return body;
+}
+function showDetail(id){
+  var c = state.cards.find(function(x){return x.id===id;});
+  if(!c) return;
+  document.getElementById('detailSelect').value = id;
+  var body = document.getElementById('detailBody');
+  body.innerHTML = '';
+  body.appendChild(buildCardDetailBody(c));
 }
 
 /* ---------- 혜택 계산기 탭 ---------- */
