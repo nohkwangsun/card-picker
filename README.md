@@ -3,6 +3,10 @@
 조사한 신용카드/체크카드 혜택 엑셀을 구조화된 JSON으로 만들고, 소비 패턴을 입력하면
 카드별 예상 혜택 금액을 계산해 랭킹을 보여주는 정적 HTML 도구입니다.
 
+🔗 **바로 쓰기**: https://nohkwangsun.github.io/card-picker/
+(GitHub Pages가 `main` 브랜치를 서빙하도록 설정되어 있다는 전제입니다 — 안 열리면
+저장소 Settings → Pages에서 Source가 `main` / `/(root)`로 되어있는지 확인해주세요.)
+
 ## 구성
 
 ```
