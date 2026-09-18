@@ -1,0 +1,816 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-18T04:28:28+00:00",
+    "sourceFile": "card_data.xlsx",
+    "cardCount": 19,
+    "taggedCardCount": 10
+  },
+  "spendCategories": [
+    {
+      "id": "convenience",
+      "label": "편의점"
+    },
+    {
+      "id": "cafe",
+      "label": "카페/커피"
+    },
+    {
+      "id": "mart",
+      "label": "마트/백화점"
+    },
+    {
+      "id": "onlineShopping",
+      "label": "온라인쇼핑"
+    },
+    {
+      "id": "gas",
+      "label": "주유"
+    },
+    {
+      "id": "transit",
+      "label": "대중교통"
+    },
+    {
+      "id": "taxi",
+      "label": "택시"
+    },
+    {
+      "id": "telecom",
+      "label": "통신비"
+    },
+    {
+      "id": "utility",
+      "label": "공과금"
+    },
+    {
+      "id": "medical",
+      "label": "병원/약국"
+    },
+    {
+      "id": "dining",
+      "label": "레스토랑/외식"
+    },
+    {
+      "id": "movie",
+      "label": "영화/문화"
+    },
+    {
+      "id": "ott",
+      "label": "OTT/구독"
+    },
+    {
+      "id": "flight",
+      "label": "항공"
+    },
+    {
+      "id": "hotel",
+      "label": "호텔/여행"
+    },
+    {
+      "id": "golf",
+      "label": "골프"
+    },
+    {
+      "id": "dutyfree",
+      "label": "면세점/아울렛"
+    },
+    {
+      "id": "laundry",
+      "label": "세탁소"
+    },
+    {
+      "id": "overseasOffline",
+      "label": "해외 오프라인"
+    },
+    {
+      "id": "overseasOnline",
+      "label": "해외 온라인"
+    },
+    {
+      "id": "etc",
+      "label": "기타"
+    }
+  ],
+  "metaCategories": {
+    "domesticAll": {
+      "label": "국내 전체",
+      "includes": [
+        "convenience",
+        "cafe",
+        "mart",
+        "onlineShopping",
+        "gas",
+        "transit",
+        "taxi",
+        "telecom",
+        "utility",
+        "medical",
+        "dining",
+        "movie",
+        "ott",
+        "flight",
+        "hotel",
+        "golf",
+        "dutyfree",
+        "laundry",
+        "etc"
+      ]
+    },
+    "overseasAll": {
+      "label": "해외 전체",
+      "includes": [
+        "overseasOffline",
+        "overseasOnline"
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": "대한항공-더-퍼스트",
+      "name": "대한항공 더 퍼스트",
+      "issuer": "현대카드 3층 시스템",
+      "group": "프리미엄",
+      "annualFee": 800000.0,
+      "annualFeeRaw": 800000.0,
+      "familyCardFee": 200000.0,
+      "familyCardFeeRaw": 200000.0,
+      "raw": {
+        "연간 혜택": ". 3만 Mi \n* 첫해 100만원\n* 차년도 3600만원",
+        "혜택": ". 직판 5만원 쿠폰 *4",
+        "마일리지": ". 국내 1/1000 MPW\n. 해외 3/1000 MPW\n. 직판 5/1000 MPW\n* 전월실적 50만원",
+        "라운지": ". The Lounge 무제한\n  (스카이허브, 마티나, 해외공항)\n* 전월실적 50만원",
+        "발레파킹": ". 공항 및 호텔 발레파킹\n* 전월실적 50만원",
+        "Visa": "Visa Infinite 서비스",
+        "이벤트": "40만원 이상 이용시, 3천 마일 + 10만원 캐시백"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "type": "mileage",
+          "rate": 0.001,
+          "condition": "전월실적 50만원",
+          "note": "국내 1마일/1,000원"
+        },
+        {
+          "categories": [
+            "overseasAll"
+          ],
+          "type": "mileage",
+          "rate": 0.003,
+          "condition": "전월실적 50만원",
+          "note": "해외 3마일/1,000원"
+        },
+        {
+          "categories": [
+            "onlineShopping"
+          ],
+          "type": "mileage",
+          "rate": 0.005,
+          "condition": "전월실적 50만원, 현대카드 직판(직영몰) 한정",
+          "note": "직판 5마일/1,000원 (일반 온라인쇼핑과 다름, 참고용)"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "퍼플",
+      "name": "퍼플",
+      "issuer": "현대카드 3층 시스템",
+      "group": "프리미엄",
+      "annualFee": 1000000.0,
+      "annualFeeRaw": 1000000.0,
+      "familyCardFee": 350000.0,
+      "familyCardFeeRaw": 350000.0,
+      "raw": {
+        "연간 혜택": ". 70만원 바우처\n* 첫해 400만원 \n* 차년도 4000만원",
+        "마일리지": ". 1/1000 MPW\n* 전월실적 50만원",
+        "적립": ". 1.5% M포인트\n* 마일리지 or M포인트 선택",
+        "라운지": ". 무제한 PP카드 (무실적)\n. 마티나 골드 6회 (전월실적 50만원)",
+        "발레파킹": ". 공항/호텔 발레파킹 10회\n* 전월실적 50만원",
+        "Visa": "Visa Infinite 서비스",
+        "그외": "공과금, 학비, 유가증권, 보험, 교통비는 적립 제외"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "excludeCategories": [
+            "utility",
+            "telecom",
+            "transit",
+            "taxi"
+          ],
+          "type": "accrual",
+          "rate": 0.015,
+          "condition": "마일리지 또는 M포인트 중 택1",
+          "note": "공과금/학비/유가증권/보험/교통비 제외"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "아멕스-플래티넘-2",
+      "name": "아멕스 플래티넘 2",
+      "issuer": "현대카드 3층 시스템",
+      "group": "프리미엄",
+      "annualFee": 1000000.0,
+      "annualFeeRaw": 1000000.0,
+      "familyCardFee": 200000.0,
+      "familyCardFeeRaw": 200000.0,
+      "raw": {
+        "연간 혜택": ". 70만원 바우처\n. 15만원 바우처\n* 첫해 400만원\n* 차년도 3600만원",
+        "혜택": "[FHR]\n. 객실 업그레이드, 호텔 크레딧 100달러\n. 조식 2인, 얼리/레이트 체크인아웃\n\n[THC]\n. 객실 업그레이드. 호텔 크레딧 100달러",
+        "멤버십": "[호텔]\n. Hilton Honors Gold\n. Marriott Bonvoy Gold Elite\n. Radisson Rewards Premium\n. The Tablet Plus\n\n[렌트카]\n. Hertz Five Star",
+        "할인": ". 레스토랑 할인 : 6만원 이상시 3만원 할인\n  (아웃백, 호텔 레스토랑 등)\n* 전월실적 50만원",
+        "적립": ". 1/1000 MRPW\n. 해외,호텔,항공,골프,면세 5/1000 MRPW\n* 전월실적 50만원",
+        "라운지": ". The Lounge 10회\n* 전월실적 50만원\n\n. The Centurion Lounge (미국, 홍콩 등)\n\n. Delta Sky Club Lounge (미국 등)",
+        "공항": ". 공항 리무진/철도 연 12회\n* 전월실적 50만원",
+        "발레파킹": ". 공항/호텔 발레파킹 월5회\n* 전월실적 50만원",
+        "Visa": "Amex Platinum 서비스",
+        "이벤트": "50만원 이용시, 40만원 캐시백"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "domesticAll",
+            "overseasAll"
+          ],
+          "type": "accrual",
+          "rate": 0.001,
+          "condition": "전월실적 50만원",
+          "note": "기본 적립"
+        },
+        {
+          "categories": [
+            "overseasOffline",
+            "overseasOnline",
+            "hotel",
+            "flight",
+            "golf",
+            "dutyfree"
+          ],
+          "type": "accrual",
+          "rate": 0.005,
+          "condition": "전월실적 50만원",
+          "note": "해외/호텔/항공/골프/면세 우대적립"
+        },
+        {
+          "categories": [
+            "dining"
+          ],
+          "type": "fixedDiscount",
+          "amount": 30000,
+          "minSpend": 60000,
+          "condition": "전월실적 50만원",
+          "note": "6만원 이상 결제 시 3만원 할인 (아웃백, 호텔 레스토랑 등)"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "헤리티지-스마트",
+      "name": "헤리티지 스마트",
+      "issuer": "KB",
+      "group": "프리미엄",
+      "annualFee": 200000.0,
+      "annualFeeRaw": 200000.0,
+      "familyCardFee": 0.0,
+      "familyCardFeeRaw": 0.0,
+      "raw": {
+        "연간 혜택": ". 호텔or항공권or공연전시 15만원 할인\n* 첫해 50만원\n* 차년도 600만원",
+        "혜택": ". 백화점,인터넷면세점 5% 할인\n. 골프연습장등 스포츠 5% 할인\n. 학원,편의점,커피전문점 5% 할인\n\n* 전월실적 40만/80만/150만\n* 실적별한도 1만/3만/5만\n* 청구할인에 중복 적용 (1+5)",
+        "할인": ". 국내 1% 청구할인\n. 해외 3% 청구할인\n* 무실적",
+        "라운지": ". The Lounge 10회\n. 국내공항 라운지 3회\n  (2여객 마티나,마티나골드, 1여객 스카이허브 등)\n* 전월실적 50만원",
+        "발레파킹": ". 국내 호텔 월 5회 (연15회)\n. 인천공항 월 3회 (연5회)\n* 전월실적 50만원",
+        "Visa": "Mastercard World 서비스",
+        "그외": "대출, 세금, 공과금, 관리비, 학교, 보험, 수수료, 연체 등은 제외"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "excludeCategories": [
+            "utility",
+            "telecom",
+            "transit",
+            "taxi"
+          ],
+          "type": "discount",
+          "rate": 0.01,
+          "condition": "무실적",
+          "note": "국내 청구할인 (대출/세금/공과금/관리비/학교/보험/수수료/연체 등 제외)"
+        },
+        {
+          "categories": [
+            "overseasAll"
+          ],
+          "type": "discount",
+          "rate": 0.03,
+          "condition": "무실적",
+          "note": "해외 청구할인"
+        },
+        {
+          "categories": [
+            "mart",
+            "dutyfree"
+          ],
+          "type": "discount",
+          "rate": 0.05,
+          "cap": 50000,
+          "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)",
+          "note": "백화점, 인터넷면세점 5%"
+        },
+        {
+          "categories": [
+            "golf"
+          ],
+          "type": "discount",
+          "rate": 0.05,
+          "cap": 50000,
+          "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)",
+          "note": "골프연습장 등 스포츠 5%"
+        },
+        {
+          "categories": [
+            "convenience",
+            "cafe"
+          ],
+          "type": "discount",
+          "rate": 0.05,
+          "cap": 50000,
+          "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)",
+          "note": "학원, 편의점, 커피전문점 5%"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "클래식-y",
+      "name": "클래식 Y",
+      "issuer": "신한",
+      "group": "프리미엄",
+      "annualFee": 105000.0,
+      "annualFeeRaw": 105000.0,
+      "familyCardFee": 30000.0,
+      "familyCardFeeRaw": 30000.0,
+      "raw": {
+        "연간 혜택": ". 마이신한 7만\n  or 문화상품권 8만\n  or 패밀리레스토랑 11만\n  or 호텔 애프터눈티 x2\n  중 1 선택\n* 첫해 20만원\n* 차년도 300만원",
+        "할인": ". 커피/제과/택시/화장품/영화 5% 할인 (한도 2만원)\n. GS칼텍스 60원/L 할인\n. JinAir 15%할인 (한도 6만원)\n* 전월실적 30만원",
+        "적립": ". 0.7% 마이신한포인트 적립\n. 해외, 아울렛, 면세점, 골프 5% 포인트 적립",
+        "Visa": "Mastercard Platinum 서비스\nor Visa Platinum 서비스\nor UPI Platinum 서비스",
+        "이벤트": "첫 연회비 전액 캐시백"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "cafe",
+            "taxi",
+            "movie"
+          ],
+          "type": "discount",
+          "rate": 0.05,
+          "cap": 20000,
+          "condition": "전월실적 30만원",
+          "note": "커피/제과/택시/화장품/영화 5% (제과·화장품 카테고리는 미분류)"
+        },
+        {
+          "categories": [
+            "gas"
+          ],
+          "type": "discount",
+          "rate": 0.035,
+          "cap": null,
+          "condition": "GS칼텍스 주유소, L당 60원 할인",
+          "note": "리터당 정액 할인(60원/L)을 평균 유가 1,700원/L 가정 시 약 3.5%로 환산"
+        },
+        {
+          "categories": [
+            "flight"
+          ],
+          "type": "discount",
+          "rate": 0.15,
+          "cap": 60000,
+          "condition": null,
+          "note": "진에어(JinAir) 15% 할인"
+        },
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "type": "accrual",
+          "rate": 0.007,
+          "condition": null,
+          "note": "마이신한포인트 0.7%"
+        },
+        {
+          "categories": [
+            "overseasOffline",
+            "overseasOnline",
+            "dutyfree",
+            "golf"
+          ],
+          "type": "accrual",
+          "rate": 0.05,
+          "condition": null,
+          "note": "해외/아울렛/면세점/골프 5% 포인트 적립"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "id-글로벌",
+      "name": "ID 글로벌",
+      "issuer": "삼성",
+      "group": "일상",
+      "annualFee": 20000.0,
+      "annualFeeRaw": 20000.0,
+      "familyCardFee": null,
+      "familyCardFeeRaw": "x",
+      "raw": {
+        "할인": ". 해외 온오프라인 2% 결제일할인\n* 할인한도 30만원\n\n. 국내 인앱결제/디지털콘텐츠 50% 결제일할인\n  (구글,앱스,넷플,디즈,유튜,쿠팡,네입)\n* 한도 1만/2만 (전월실적 50만/100만)\n\n. 해외결재 수수료 1.2% (1+0.2) 결제일할인\n* 무실적, 수수료할인 한도 없음\n\n. 해외 오프라인 삼성페이 결재시 5% 결제일할인\n* 한도 1만/2만 (전월실적 50만/100만)",
+        "라운지": ". The Lounge 2회 (월1회)\n* 전월실적 50만원"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "overseasOffline",
+            "overseasOnline"
+          ],
+          "type": "discount",
+          "rate": 0.02,
+          "cap": 300000,
+          "condition": null,
+          "note": "해외 온오프라인 2% 결제일할인"
+        },
+        {
+          "categories": [
+            "ott"
+          ],
+          "type": "discount",
+          "rate": 0.5,
+          "cap": 20000,
+          "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)",
+          "note": "국내 인앱결제/디지털콘텐츠(구글,앱스,넷플,디즈니,유튜브,쿠팡,네이버페이) 50%"
+        },
+        {
+          "categories": [
+            "overseasOffline",
+            "overseasOnline"
+          ],
+          "type": "feeDiscount",
+          "rate": 0.012,
+          "cap": null,
+          "condition": "무실적",
+          "note": "해외결제 수수료 1.2%(1+0.2%p) 결제일할인, 한도 없음"
+        },
+        {
+          "categories": [
+            "overseasOffline"
+          ],
+          "type": "discount",
+          "rate": 0.05,
+          "cap": 20000,
+          "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)",
+          "note": "해외 오프라인 삼성페이 결제 5%"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "id-해외-3-5",
+      "name": "ID 해외 3.5",
+      "issuer": "삼성",
+      "group": "일상",
+      "annualFee": 15000.0,
+      "annualFeeRaw": 15000.0,
+      "familyCardFee": null,
+      "familyCardFeeRaw": "x",
+      "raw": {
+        "할인": ". 해외 온오프라인 3.5% 결제일할인\n. 국내 온오프라인 0.7% 결제일할인\n* 한도 없음\n* 무실적",
+        "이벤트": "신규 고객. 연회비 전액 캐시백"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "overseasOffline",
+            "overseasOnline"
+          ],
+          "type": "discount",
+          "rate": 0.035,
+          "cap": null,
+          "condition": "무실적, 한도 없음",
+          "note": "해외 온오프라인 3.5%"
+        },
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "type": "discount",
+          "rate": 0.007,
+          "cap": null,
+          "condition": "무실적, 한도 없음",
+          "note": "국내 온오프라인 0.7%"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "id-셀렉트-all",
+      "name": "ID 셀렉트 all",
+      "issuer": "삼성",
+      "group": "일상",
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    },
+    {
+      "id": "mr-life",
+      "name": "Mr.Life",
+      "issuer": "신한",
+      "group": "일상",
+      "annualFee": 18000.0,
+      "annualFeeRaw": 18000.0,
+      "familyCardFee": null,
+      "familyCardFeeRaw": "x",
+      "raw": {
+        "할인": "[공과금 10%할인] (한도 3천/7천/1만)\n. 전기/도시가스/통신사\n[Time 10%할인] (한도 1만/2만/3만)\n. 편의점/병원/약국/세탁소 (일1회, 월5회, 승인한도 1만원)\n. 온라인/택시/식음료 21시~09시 (일1회, 월10회, 승인한도 1만원)\n[주말 10%할인] (한도 3천/7천/1만)\n. 할인마트 : 일1회, 승인한도 5만원\n. 주유소 : 일1회, 승인한도 10만원, 월승인한도 30만원\n  * 전월실적 구간 : 30만/50만/100만"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "utility",
+            "telecom"
+          ],
+          "type": "discount",
+          "rate": 0.1,
+          "cap": 10000,
+          "condition": "전월실적 30만/50만/100만원 구간, 한도 3천/7천/1만원",
+          "note": "전기/도시가스/통신사 10% 할인"
+        },
+        {
+          "categories": [
+            "convenience",
+            "medical",
+            "laundry"
+          ],
+          "type": "discount",
+          "rate": 0.1,
+          "cap": 10000,
+          "condition": "일1회, 월5회, 전월실적 구간별 승인한도 1만원",
+          "note": "편의점/병원/약국/세탁소 10% 할인"
+        },
+        {
+          "categories": [
+            "onlineShopping",
+            "taxi",
+            "dining"
+          ],
+          "type": "discount",
+          "rate": 0.1,
+          "cap": 10000,
+          "condition": "21시~09시, 일1회, 월10회, 전월실적 구간별 승인한도 1만원",
+          "note": "온라인/택시/심야 식음료 10% 할인"
+        },
+        {
+          "categories": [
+            "mart"
+          ],
+          "type": "discount",
+          "rate": 0.1,
+          "cap": 50000,
+          "condition": "주말, 일1회, 전월실적 구간별 승인한도 5만원",
+          "note": "대형마트 10% 할인"
+        },
+        {
+          "categories": [
+            "gas"
+          ],
+          "type": "discount",
+          "rate": 0.1,
+          "cap": 100000,
+          "condition": "주말, 일1회 승인한도 10만원/월승인한도 30만원, 전월실적 구간",
+          "note": "주유소 10% 할인"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "카드의-정석-쇼핑",
+      "name": "카드의 정석 쇼핑+",
+      "issuer": "우리",
+      "group": "일상",
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    },
+    {
+      "id": "마일리지-플래티넘-스카이패스",
+      "name": "마일리지 플래티넘 스카이패스",
+      "issuer": "삼성",
+      "group": "마일리지",
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    },
+    {
+      "id": "카드의정석-every-mile",
+      "name": "카드의정석 every mile",
+      "issuer": "우리",
+      "group": "마일리지",
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    },
+    {
+      "id": "i-mileage",
+      "name": "i-mileage",
+      "issuer": "ibk",
+      "group": "마일리지",
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    },
+    {
+      "id": "skypass-아멕스-플래티늄",
+      "name": "skypass 아멕스 플래티늄",
+      "issuer": "하나",
+      "group": "마일리지",
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    },
+    {
+      "id": "bev-ⅴ카드-스카이패스형",
+      "name": "BeV Ⅴ카드 (스카이패스형)",
+      "issuer": "KB",
+      "group": null,
+      "annualFee": 300000.0,
+      "annualFeeRaw": 300000.0,
+      "familyCardFee": 0.0,
+      "familyCardFeeRaw": 0.0,
+      "raw": {
+        "연간 혜택": ". 국내여행숙박/호텔뷔페 25만원\n  or 롯데백화점 22만원\n  or KB포인트리 22만점",
+        "마일리지": ". 주중 기본 0.8/1000 MPW\n. 주중 커피/편의점/자동납부 1/1000 MPW\n  (관리비,통신사,도시가스)\n. 주말 기본 1/1000 MPW\n. 주말 골프장/호텔/면세점 2/1000 MPW\n* 전월실적 50만원\n* 월 최대 3만 Mi 한도",
+        "라운지": ". The Lounge 6회 (전년 이용실적 1000만원)\n. 국내공항 라운지 3회\n  (2여객 마티나,마티나골드, 1여객 스카이허브 등)\n* 전월실적 50만원",
+        "발레파킹": ". 국내 호텔 월 10회 (연24회)\n. 인천공항 월 5회 (연12회)\n* 전월실적 50만원",
+        "Visa": "Mastercard World 서비스\nor UPI Diamond 서비스"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "type": "mileage",
+          "rate": 0.0008,
+          "condition": "평일, 전월실적 50만원, 월 최대 3만 마일",
+          "note": "평일 기본 0.8마일/1,000원"
+        },
+        {
+          "categories": [
+            "cafe",
+            "convenience",
+            "utility"
+          ],
+          "type": "mileage",
+          "rate": 0.001,
+          "condition": "평일, 전월실적 50만원, 월 최대 3만 마일",
+          "note": "평일 커피/편의점/자동납부(관리비,통신사,도시가스) 1마일/1,000원"
+        },
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "type": "mileage",
+          "rate": 0.001,
+          "condition": "주말, 전월실적 50만원, 월 최대 3만 마일",
+          "note": "주말 기본 1마일/1,000원"
+        },
+        {
+          "categories": [
+            "golf",
+            "hotel",
+            "dutyfree"
+          ],
+          "type": "mileage",
+          "rate": 0.002,
+          "condition": "주말, 전월실적 50만원, 월 최대 3만 마일",
+          "note": "주말 골프장/호텔/면세점 2마일/1,000원"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "네이버페이-머니카드",
+      "name": "네이버페이 머니카드",
+      "issuer": null,
+      "group": null,
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {
+        "연간 혜택": "해외2%. 수수료면제. 무실적"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "overseasOffline",
+            "overseasOnline"
+          ],
+          "type": "discount",
+          "rate": 0.02,
+          "cap": null,
+          "condition": "무실적, 해외 수수료 면제",
+          "note": "해외 결제 2% 할인"
+        }
+      ],
+      "hasStructuredBenefits": true,
+      "researched": true
+    },
+    {
+      "id": "카드의정석2-super",
+      "name": "카드의정석2 super",
+      "issuer": "우리",
+      "group": null,
+      "annualFee": 30000.0,
+      "annualFeeRaw": 30000.0,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    },
+    {
+      "id": "need-pay",
+      "name": "need pay",
+      "issuer": "KB",
+      "group": null,
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    },
+    {
+      "id": "팟카드",
+      "name": "팟카드",
+      "issuer": "부산은행",
+      "group": null,
+      "annualFee": null,
+      "annualFeeRaw": null,
+      "familyCardFee": null,
+      "familyCardFeeRaw": null,
+      "raw": {},
+      "benefits": [],
+      "hasStructuredBenefits": false,
+      "researched": false
+    }
+  ]
+}

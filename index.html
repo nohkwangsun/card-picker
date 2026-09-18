@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>신용카드 혜택 매니저</title>
+<script id="card-data" type="application/json">{"meta": {"generatedAt": "2026-09-18T04:28:28+00:00", "sourceFile": "card_data.xlsx", "cardCount": 19, "taggedCardCount": 10}, "spendCategories": [{"id": "convenience", "label": "편의점"}, {"id": "cafe", "label": "카페/커피"}, {"id": "mart", "label": "마트/백화점"}, {"id": "onlineShopping", "label": "온라인쇼핑"}, {"id": "gas", "label": "주유"}, {"id": "transit", "label": "대중교통"}, {"id": "taxi", "label": "택시"}, {"id": "telecom", "label": "통신비"}, {"id": "utility", "label": "공과금"}, {"id": "medical", "label": "병원/약국"}, {"id": "dining", "label": "레스토랑/외식"}, {"id": "movie", "label": "영화/문화"}, {"id": "ott", "label": "OTT/구독"}, {"id": "flight", "label": "항공"}, {"id": "hotel", "label": "호텔/여행"}, {"id": "golf", "label": "골프"}, {"id": "dutyfree", "label": "면세점/아울렛"}, {"id": "laundry", "label": "세탁소"}, {"id": "overseasOffline", "label": "해외 오프라인"}, {"id": "overseasOnline", "label": "해외 온라인"}, {"id": "etc", "label": "기타"}], "metaCategories": {"domesticAll": {"label": "국내 전체", "includes": ["convenience", "cafe", "mart", "onlineShopping", "gas", "transit", "taxi", "telecom", "utility", "medical", "dining", "movie", "ott", "flight", "hotel", "golf", "dutyfree", "laundry", "etc"]}, "overseasAll": {"label": "해외 전체", "includes": ["overseasOffline", "overseasOnline"]}}, "cards": [{"id": "대한항공-더-퍼스트", "name": "대한항공 더 퍼스트", "issuer": "현대카드 3층 시스템", "group": "프리미엄", "annualFee": 800000.0, "annualFeeRaw": 800000.0, "familyCardFee": 200000.0, "familyCardFeeRaw": 200000.0, "raw": {"연간 혜택": ". 3만 Mi \n* 첫해 100만원\n* 차년도 3600만원", "혜택": ". 직판 5만원 쿠폰 *4", "마일리지": ". 국내 1/1000 MPW\n. 해외 3/1000 MPW\n. 직판 5/1000 MPW\n* 전월실적 50만원", "라운지": ". The Lounge 무제한\n  (스카이허브, 마티나, 해외공항)\n* 전월실적 50만원", "발레파킹": ". 공항 및 호텔 발레파킹\n* 전월실적 50만원", "Visa": "Visa Infinite 서비스", "이벤트": "40만원 이상 이용시, 3천 마일 + 10만원 캐시백"}, "benefits": [{"categories": ["domesticAll"], "type": "mileage", "rate": 0.001, "condition": "전월실적 50만원", "note": "국내 1마일/1,000원"}, {"categories": ["overseasAll"], "type": "mileage", "rate": 0.003, "condition": "전월실적 50만원", "note": "해외 3마일/1,000원"}, {"categories": ["onlineShopping"], "type": "mileage", "rate": 0.005, "condition": "전월실적 50만원, 현대카드 직판(직영몰) 한정", "note": "직판 5마일/1,000원 (일반 온라인쇼핑과 다름, 참고용)"}], "hasStructuredBenefits": true, "researched": true}, {"id": "퍼플", "name": "퍼플", "issuer": "현대카드 3층 시스템", "group": "프리미엄", "annualFee": 1000000.0, "annualFeeRaw": 1000000.0, "familyCardFee": 350000.0, "familyCardFeeRaw": 350000.0, "raw": {"연간 혜택": ". 70만원 바우처\n* 첫해 400만원 \n* 차년도 4000만원", "마일리지": ". 1/1000 MPW\n* 전월실적 50만원", "적립": ". 1.5% M포인트\n* 마일리지 or M포인트 선택", "라운지": ". 무제한 PP카드 (무실적)\n. 마티나 골드 6회 (전월실적 50만원)", "발레파킹": ". 공항/호텔 발레파킹 10회\n* 전월실적 50만원", "Visa": "Visa Infinite 서비스", "그외": "공과금, 학비, 유가증권, 보험, 교통비는 적립 제외"}, "benefits": [{"categories": ["domesticAll"], "excludeCategories": ["utility", "telecom", "transit", "taxi"], "type": "accrual", "rate": 0.015, "condition": "마일리지 또는 M포인트 중 택1", "note": "공과금/학비/유가증권/보험/교통비 제외"}], "hasStructuredBenefits": true, "researched": true}, {"id": "아멕스-플래티넘-2", "name": "아멕스 플래티넘 2", "issuer": "현대카드 3층 시스템", "group": "프리미엄", "annualFee": 1000000.0, "annualFeeRaw": 1000000.0, "familyCardFee": 200000.0, "familyCardFeeRaw": 200000.0, "raw": {"연간 혜택": ". 70만원 바우처\n. 15만원 바우처\n* 첫해 400만원\n* 차년도 3600만원", "혜택": "[FHR]\n. 객실 업그레이드, 호텔 크레딧 100달러\n. 조식 2인, 얼리/레이트 체크인아웃\n\n[THC]\n. 객실 업그레이드. 호텔 크레딧 100달러", "멤버십": "[호텔]\n. Hilton Honors Gold\n. Marriott Bonvoy Gold Elite\n. Radisson Rewards Premium\n. The Tablet Plus\n\n[렌트카]\n. Hertz Five Star", "할인": ". 레스토랑 할인 : 6만원 이상시 3만원 할인\n  (아웃백, 호텔 레스토랑 등)\n* 전월실적 50만원", "적립": ". 1/1000 MRPW\n. 해외,호텔,항공,골프,면세 5/1000 MRPW\n* 전월실적 50만원", "라운지": ". The Lounge 10회\n* 전월실적 50만원\n\n. The Centurion Lounge (미국, 홍콩 등)\n\n. Delta Sky Club Lounge (미국 등)", "공항": ". 공항 리무진/철도 연 12회\n* 전월실적 50만원", "발레파킹": ". 공항/호텔 발레파킹 월5회\n* 전월실적 50만원", "Visa": "Amex Platinum 서비스", "이벤트": "50만원 이용시, 40만원 캐시백"}, "benefits": [{"categories": ["domesticAll", "overseasAll"], "type": "accrual", "rate": 0.001, "condition": "전월실적 50만원", "note": "기본 적립"}, {"categories": ["overseasOffline", "overseasOnline", "hotel", "flight", "golf", "dutyfree"], "type": "accrual", "rate": 0.005, "condition": "전월실적 50만원", "note": "해외/호텔/항공/골프/면세 우대적립"}, {"categories": ["dining"], "type": "fixedDiscount", "amount": 30000, "minSpend": 60000, "condition": "전월실적 50만원", "note": "6만원 이상 결제 시 3만원 할인 (아웃백, 호텔 레스토랑 등)"}], "hasStructuredBenefits": true, "researched": true}, {"id": "헤리티지-스마트", "name": "헤리티지 스마트", "issuer": "KB", "group": "프리미엄", "annualFee": 200000.0, "annualFeeRaw": 200000.0, "familyCardFee": 0.0, "familyCardFeeRaw": 0.0, "raw": {"연간 혜택": ". 호텔or항공권or공연전시 15만원 할인\n* 첫해 50만원\n* 차년도 600만원", "혜택": ". 백화점,인터넷면세점 5% 할인\n. 골프연습장등 스포츠 5% 할인\n. 학원,편의점,커피전문점 5% 할인\n\n* 전월실적 40만/80만/150만\n* 실적별한도 1만/3만/5만\n* 청구할인에 중복 적용 (1+5)", "할인": ". 국내 1% 청구할인\n. 해외 3% 청구할인\n* 무실적", "라운지": ". The Lounge 10회\n. 국내공항 라운지 3회\n  (2여객 마티나,마티나골드, 1여객 스카이허브 등)\n* 전월실적 50만원", "발레파킹": ". 국내 호텔 월 5회 (연15회)\n. 인천공항 월 3회 (연5회)\n* 전월실적 50만원", "Visa": "Mastercard World 서비스", "그외": "대출, 세금, 공과금, 관리비, 학교, 보험, 수수료, 연체 등은 제외"}, "benefits": [{"categories": ["domesticAll"], "excludeCategories": ["utility", "telecom", "transit", "taxi"], "type": "discount", "rate": 0.01, "condition": "무실적", "note": "국내 청구할인 (대출/세금/공과금/관리비/학교/보험/수수료/연체 등 제외)"}, {"categories": ["overseasAll"], "type": "discount", "rate": 0.03, "condition": "무실적", "note": "해외 청구할인"}, {"categories": ["mart", "dutyfree"], "type": "discount", "rate": 0.05, "cap": 50000, "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)", "note": "백화점, 인터넷면세점 5%"}, {"categories": ["golf"], "type": "discount", "rate": 0.05, "cap": 50000, "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)", "note": "골프연습장 등 스포츠 5%"}, {"categories": ["convenience", "cafe"], "type": "discount", "rate": 0.05, "cap": 50000, "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)", "note": "학원, 편의점, 커피전문점 5%"}], "hasStructuredBenefits": true, "researched": true}, {"id": "클래식-y", "name": "클래식 Y", "issuer": "신한", "group": "프리미엄", "annualFee": 105000.0, "annualFeeRaw": 105000.0, "familyCardFee": 30000.0, "familyCardFeeRaw": 30000.0, "raw": {"연간 혜택": ". 마이신한 7만\n  or 문화상품권 8만\n  or 패밀리레스토랑 11만\n  or 호텔 애프터눈티 x2\n  중 1 선택\n* 첫해 20만원\n* 차년도 300만원", "할인": ". 커피/제과/택시/화장품/영화 5% 할인 (한도 2만원)\n. GS칼텍스 60원/L 할인\n. JinAir 15%할인 (한도 6만원)\n* 전월실적 30만원", "적립": ". 0.7% 마이신한포인트 적립\n. 해외, 아울렛, 면세점, 골프 5% 포인트 적립", "Visa": "Mastercard Platinum 서비스\nor Visa Platinum 서비스\nor UPI Platinum 서비스", "이벤트": "첫 연회비 전액 캐시백"}, "benefits": [{"categories": ["cafe", "taxi", "movie"], "type": "discount", "rate": 0.05, "cap": 20000, "condition": "전월실적 30만원", "note": "커피/제과/택시/화장품/영화 5% (제과·화장품 카테고리는 미분류)"}, {"categories": ["gas"], "type": "discount", "rate": 0.035, "cap": null, "condition": "GS칼텍스 주유소, L당 60원 할인", "note": "리터당 정액 할인(60원/L)을 평균 유가 1,700원/L 가정 시 약 3.5%로 환산"}, {"categories": ["flight"], "type": "discount", "rate": 0.15, "cap": 60000, "condition": null, "note": "진에어(JinAir) 15% 할인"}, {"categories": ["domesticAll"], "type": "accrual", "rate": 0.007, "condition": null, "note": "마이신한포인트 0.7%"}, {"categories": ["overseasOffline", "overseasOnline", "dutyfree", "golf"], "type": "accrual", "rate": 0.05, "condition": null, "note": "해외/아울렛/면세점/골프 5% 포인트 적립"}], "hasStructuredBenefits": true, "researched": true}, {"id": "id-글로벌", "name": "ID 글로벌", "issuer": "삼성", "group": "일상", "annualFee": 20000.0, "annualFeeRaw": 20000.0, "familyCardFee": null, "familyCardFeeRaw": "x", "raw": {"할인": ". 해외 온오프라인 2% 결제일할인\n* 할인한도 30만원\n\n. 국내 인앱결제/디지털콘텐츠 50% 결제일할인\n  (구글,앱스,넷플,디즈,유튜,쿠팡,네입)\n* 한도 1만/2만 (전월실적 50만/100만)\n\n. 해외결재 수수료 1.2% (1+0.2) 결제일할인\n* 무실적, 수수료할인 한도 없음\n\n. 해외 오프라인 삼성페이 결재시 5% 결제일할인\n* 한도 1만/2만 (전월실적 50만/100만)", "라운지": ". The Lounge 2회 (월1회)\n* 전월실적 50만원"}, "benefits": [{"categories": ["overseasOffline", "overseasOnline"], "type": "discount", "rate": 0.02, "cap": 300000, "condition": null, "note": "해외 온오프라인 2% 결제일할인"}, {"categories": ["ott"], "type": "discount", "rate": 0.5, "cap": 20000, "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)", "note": "국내 인앱결제/디지털콘텐츠(구글,앱스,넷플,디즈니,유튜브,쿠팡,네이버페이) 50%"}, {"categories": ["overseasOffline", "overseasOnline"], "type": "feeDiscount", "rate": 0.012, "cap": null, "condition": "무실적", "note": "해외결제 수수료 1.2%(1+0.2%p) 결제일할인, 한도 없음"}, {"categories": ["overseasOffline"], "type": "discount", "rate": 0.05, "cap": 20000, "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)", "note": "해외 오프라인 삼성페이 결제 5%"}], "hasStructuredBenefits": true, "researched": true}, {"id": "id-해외-3-5", "name": "ID 해외 3.5", "issuer": "삼성", "group": "일상", "annualFee": 15000.0, "annualFeeRaw": 15000.0, "familyCardFee": null, "familyCardFeeRaw": "x", "raw": {"할인": ". 해외 온오프라인 3.5% 결제일할인\n. 국내 온오프라인 0.7% 결제일할인\n* 한도 없음\n* 무실적", "이벤트": "신규 고객. 연회비 전액 캐시백"}, "benefits": [{"categories": ["overseasOffline", "overseasOnline"], "type": "discount", "rate": 0.035, "cap": null, "condition": "무실적, 한도 없음", "note": "해외 온오프라인 3.5%"}, {"categories": ["domesticAll"], "type": "discount", "rate": 0.007, "cap": null, "condition": "무실적, 한도 없음", "note": "국내 온오프라인 0.7%"}], "hasStructuredBenefits": true, "researched": true}, {"id": "id-셀렉트-all", "name": "ID 셀렉트 all", "issuer": "삼성", "group": "일상", "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}, {"id": "mr-life", "name": "Mr.Life", "issuer": "신한", "group": "일상", "annualFee": 18000.0, "annualFeeRaw": 18000.0, "familyCardFee": null, "familyCardFeeRaw": "x", "raw": {"할인": "[공과금 10%할인] (한도 3천/7천/1만)\n. 전기/도시가스/통신사\n[Time 10%할인] (한도 1만/2만/3만)\n. 편의점/병원/약국/세탁소 (일1회, 월5회, 승인한도 1만원)\n. 온라인/택시/식음료 21시~09시 (일1회, 월10회, 승인한도 1만원)\n[주말 10%할인] (한도 3천/7천/1만)\n. 할인마트 : 일1회, 승인한도 5만원\n. 주유소 : 일1회, 승인한도 10만원, 월승인한도 30만원\n  * 전월실적 구간 : 30만/50만/100만"}, "benefits": [{"categories": ["utility", "telecom"], "type": "discount", "rate": 0.1, "cap": 10000, "condition": "전월실적 30만/50만/100만원 구간, 한도 3천/7천/1만원", "note": "전기/도시가스/통신사 10% 할인"}, {"categories": ["convenience", "medical", "laundry"], "type": "discount", "rate": 0.1, "cap": 10000, "condition": "일1회, 월5회, 전월실적 구간별 승인한도 1만원", "note": "편의점/병원/약국/세탁소 10% 할인"}, {"categories": ["onlineShopping", "taxi", "dining"], "type": "discount", "rate": 0.1, "cap": 10000, "condition": "21시~09시, 일1회, 월10회, 전월실적 구간별 승인한도 1만원", "note": "온라인/택시/심야 식음료 10% 할인"}, {"categories": ["mart"], "type": "discount", "rate": 0.1, "cap": 50000, "condition": "주말, 일1회, 전월실적 구간별 승인한도 5만원", "note": "대형마트 10% 할인"}, {"categories": ["gas"], "type": "discount", "rate": 0.1, "cap": 100000, "condition": "주말, 일1회 승인한도 10만원/월승인한도 30만원, 전월실적 구간", "note": "주유소 10% 할인"}], "hasStructuredBenefits": true, "researched": true}, {"id": "카드의-정석-쇼핑", "name": "카드의 정석 쇼핑+", "issuer": "우리", "group": "일상", "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}, {"id": "마일리지-플래티넘-스카이패스", "name": "마일리지 플래티넘 스카이패스", "issuer": "삼성", "group": "마일리지", "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}, {"id": "카드의정석-every-mile", "name": "카드의정석 every mile", "issuer": "우리", "group": "마일리지", "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}, {"id": "i-mileage", "name": "i-mileage", "issuer": "ibk", "group": "마일리지", "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}, {"id": "skypass-아멕스-플래티늄", "name": "skypass 아멕스 플래티늄", "issuer": "하나", "group": "마일리지", "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}, {"id": "bev-ⅴ카드-스카이패스형", "name": "BeV Ⅴ카드 (스카이패스형)", "issuer": "KB", "group": null, "annualFee": 300000.0, "annualFeeRaw": 300000.0, "familyCardFee": 0.0, "familyCardFeeRaw": 0.0, "raw": {"연간 혜택": ". 국내여행숙박/호텔뷔페 25만원\n  or 롯데백화점 22만원\n  or KB포인트리 22만점", "마일리지": ". 주중 기본 0.8/1000 MPW\n. 주중 커피/편의점/자동납부 1/1000 MPW\n  (관리비,통신사,도시가스)\n. 주말 기본 1/1000 MPW\n. 주말 골프장/호텔/면세점 2/1000 MPW\n* 전월실적 50만원\n* 월 최대 3만 Mi 한도", "라운지": ". The Lounge 6회 (전년 이용실적 1000만원)\n. 국내공항 라운지 3회\n  (2여객 마티나,마티나골드, 1여객 스카이허브 등)\n* 전월실적 50만원", "발레파킹": ". 국내 호텔 월 10회 (연24회)\n. 인천공항 월 5회 (연12회)\n* 전월실적 50만원", "Visa": "Mastercard World 서비스\nor UPI Diamond 서비스"}, "benefits": [{"categories": ["domesticAll"], "type": "mileage", "rate": 0.0008, "condition": "평일, 전월실적 50만원, 월 최대 3만 마일", "note": "평일 기본 0.8마일/1,000원"}, {"categories": ["cafe", "convenience", "utility"], "type": "mileage", "rate": 0.001, "condition": "평일, 전월실적 50만원, 월 최대 3만 마일", "note": "평일 커피/편의점/자동납부(관리비,통신사,도시가스) 1마일/1,000원"}, {"categories": ["domesticAll"], "type": "mileage", "rate": 0.001, "condition": "주말, 전월실적 50만원, 월 최대 3만 마일", "note": "주말 기본 1마일/1,000원"}, {"categories": ["golf", "hotel", "dutyfree"], "type": "mileage", "rate": 0.002, "condition": "주말, 전월실적 50만원, 월 최대 3만 마일", "note": "주말 골프장/호텔/면세점 2마일/1,000원"}], "hasStructuredBenefits": true, "researched": true}, {"id": "네이버페이-머니카드", "name": "네이버페이 머니카드", "issuer": null, "group": null, "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {"연간 혜택": "해외2%. 수수료면제. 무실적"}, "benefits": [{"categories": ["overseasOffline", "overseasOnline"], "type": "discount", "rate": 0.02, "cap": null, "condition": "무실적, 해외 수수료 면제", "note": "해외 결제 2% 할인"}], "hasStructuredBenefits": true, "researched": true}, {"id": "카드의정석2-super", "name": "카드의정석2 super", "issuer": "우리", "group": null, "annualFee": 30000.0, "annualFeeRaw": 30000.0, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}, {"id": "need-pay", "name": "need pay", "issuer": "KB", "group": null, "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}, {"id": "팟카드", "name": "팟카드", "issuer": "부산은행", "group": null, "annualFee": null, "annualFeeRaw": null, "familyCardFee": null, "familyCardFeeRaw": null, "raw": {}, "benefits": [], "hasStructuredBenefits": false, "researched": false}]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --text:#1a1d24; --muted:#666e7d; --border:#e3e6eb;
+  --accent:#2f6fed; --accent-weak:#eaf1ff; --good:#1a8f5e; --good-weak:#e5f7ee;
+  --bad:#d0433f; --warn:#b8860b; --warn-weak:#fff6e0;
+  --tag-premium:#8b5cf6; --tag-daily:#2f6fed; --tag-mile:#0ea5a3; --tag-etc:#6b7280;
+  --radius:10px; --shadow:0 1px 2px rgba(20,20,30,.06), 0 4px 16px rgba(20,20,30,.04);
+  font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14161b; --panel:#1c1f26; --text:#e7e9ee; --muted:#9aa2b1; --border:#2c313c;
+    --accent:#6a9bff; --accent-weak:#1e2a45; --good:#3fcf8e; --good-weak:#122b21;
+    --bad:#ff6b66; --warn:#e0b84a; --warn-weak:#332a10;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14161b; --panel:#1c1f26; --text:#e7e9ee; --muted:#9aa2b1; --border:#2c313c;
+  --accent:#6a9bff; --accent-weak:#1e2a45; --good:#3fcf8e; --good-weak:#122b21;
+  --bad:#ff6b66; --warn:#e0b84a; --warn-weak:#332a10;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 60px;}
+header.top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px;}
+h1{font-size:22px;margin:0;}
+.sub{color:var(--muted);font-size:13px;}
+.theme-btn{border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:13px;}
+nav.tabs{display:flex;gap:6px;margin:18px 0 16px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+nav.tabs button{border:none;background:transparent;color:var(--muted);padding:10px 14px;font-size:14px;cursor:pointer;border-bottom:2px solid transparent;}
+nav.tabs button.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600;}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:16px;}
+.tabview{display:none;}
+.tabview.active{display:block;}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px;}
+input,select{background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:7px 9px;font-size:13px;}
+input[type="number"]{width:120px;}
+button.btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;cursor:pointer;}
+button.btn.secondary{background:var(--panel);color:var(--text);border:1px solid var(--border);}
+button.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+th{color:var(--muted);font-weight:600;font-size:12px;white-space:nowrap;}
+tr.clickable{cursor:pointer;}
+tr.clickable:hover{background:var(--accent-weak);}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;color:#fff;}
+.badge.premium{background:var(--tag-premium);}
+.badge.daily{background:var(--tag-daily);}
+.badge.mile{background:var(--tag-mile);}
+.badge.etc{background:var(--tag-etc);}
+.badge.tagged{background:var(--good);}
+.badge.untagged{background:var(--muted);}
+.muted{color:var(--muted);}
+.pre{white-space:pre-wrap;line-height:1.55;font-size:13.5px;}
+.section-title{font-weight:700;font-size:13px;color:var(--accent);margin:14px 0 4px;}
+.grid-spend{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
+.grid-spend .field input{width:100%;}
+.rank-card{border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin-bottom:10px;background:var(--bg);}
+.rank-card.top1{border-color:var(--good);box-shadow:0 0 0 1px var(--good) inset;}
+.rank-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+.rank-name{font-weight:700;font-size:15px;}
+.rank-net{font-weight:700;font-size:16px;}
+.rank-net.pos{color:var(--good);}
+.rank-net.neg{color:var(--bad);}
+.detail-toggle{font-size:12px;color:var(--accent);cursor:pointer;user-select:none;}
+.breakdown{margin-top:8px;font-size:12.5px;display:none;}
+.breakdown.open{display:block;}
+.breakdown table{margin-top:6px;}
+.notice{background:var(--warn-weak);color:var(--warn);border:1px solid var(--warn);border-radius:8px;padding:10px 12px;font-size:12.5px;margin-bottom:12px;}
+.notice.info{background:var(--accent-weak);color:var(--accent);border-color:var(--accent);}
+.tagrow{display:grid;grid-template-columns:1.4fr .8fr .6fr .5fr 1.2fr 1fr auto;gap:6px;align-items:center;margin-bottom:6px;font-size:12.5px;}
+.tagrow .chips{display:flex;flex-wrap:wrap;gap:4px;}
+.chip{border:1px solid var(--border);border-radius:6px;padding:2px 6px;font-size:11px;cursor:pointer;background:var(--panel);}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+.small{font-size:12px;color:var(--muted);}
+.flex-between{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+.tag-editor{border-top:1px dashed var(--border);margin-top:14px;padding-top:14px;}
+.remove-x{cursor:pointer;color:var(--bad);font-weight:700;padding:2px 6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>💳 신용카드 혜택 매니저</h1>
+      <div class="sub" id="metaLine">데이터 로딩 중...</div>
+    </div>
+    <button class="theme-btn" id="themeBtn">🌓 테마</button>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="compare" class="active">카드 비교</button>
+    <button data-tab="calc">혜택 계산기</button>
+    <button data-tab="detail">카드 상세</button>
+    <button data-tab="manage">데이터 업데이트</button>
+  </nav>
+
+  <!-- 카드 비교 -->
+  <section class="tabview active" id="tab-compare">
+    <div class="panel">
+      <div class="row" style="margin-bottom:12px;">
+        <div class="field"><label>검색</label><input type="text" id="fSearch" placeholder="카드명 검색"></div>
+        <div class="field"><label>그룹</label><select id="fGroup"><option value="">전체</option></select></div>
+        <div class="field"><label>카드사</label><select id="fIssuer"><option value="">전체</option></select></div>
+        <div class="field"><label>연회비 이하</label><input type="number" id="fFee" placeholder="예: 100000"></div>
+        <div class="field"><label>&nbsp;</label><label style="display:flex;align-items:center;gap:5px;font-size:12.5px;"><input type="checkbox" id="fTaggedOnly" style="width:auto;">구조화된 카드만</label></div>
+      </div>
+      <table>
+        <thead><tr><th>그룹</th><th>카드사</th><th>카드명</th><th>연회비</th><th>가족카드</th><th>혜택계산</th></tr></thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 혜택 계산기 -->
+  <section class="tabview" id="tab-calc">
+    <div class="panel">
+      <div class="notice info">월 소비 금액을 카테고리별로 입력하면, 구조화된 혜택 데이터가 있는 카드에 한해 예상 월 혜택 금액과 연회비를 반영한 순혜택을 계산해 랭킹으로 보여줍니다. 마일리지는 아래 "마일리지 환산가치"로 원화 환산합니다. 정액/구간 할인은 근사치이며 실제 카드사 약관이 우선합니다.</div>
+      <div class="section-title">월 소비 패턴 입력</div>
+      <div class="grid-spend" id="spendInputs"></div>
+      <div class="row" style="margin-top:14px;">
+        <div class="field"><label>마일리지 환산가치 (원/마일)</label><input type="number" id="mileValue" value="20"></div>
+        <div class="field"><label>&nbsp;</label><button class="btn" id="calcBtn">계산하기</button></div>
+        <div class="field"><label>&nbsp;</label><button class="btn secondary" id="resetSpendBtn">입력 초기화</button></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="flex-between"><div class="section-title" style="margin:0;">추천 랭킹</div><div class="small" id="rankSummary"></div></div>
+      <div id="rankList"></div>
+      <div class="section-title">아직 혜택이 구조화되지 않은 카드</div>
+      <div class="small muted" id="untaggedList"></div>
+    </div>
+  </section>
+
+  <!-- 카드 상세 -->
+  <section class="tabview" id="tab-detail">
+    <div class="panel">
+      <div class="field" style="max-width:360px;"><label>카드 선택</label><select id="detailSelect"></select></div>
+      <div id="detailBody" style="margin-top:14px;"></div>
+    </div>
+  </section>
+
+  <!-- 데이터 업데이트 -->
+  <section class="tabview" id="tab-manage">
+    <div class="panel">
+      <div class="section-title" style="margin-top:0;">새 xlsx로 업데이트</div>
+      <p class="small">기존과 같은 형식(1행: 그룹, 2행: 카드명, A열: 속성명)의 xlsx 파일을 올리면 브라우저에서 바로 파싱해서 반영합니다. 기존에 태깅해둔 혜택 데이터는 <b>카드 이름</b>으로 매칭되어 그대로 유지되고, 이름이 새로 등장한 카드만 "미태깅" 상태로 추가됩니다.</p>
+      <input type="file" id="xlsxInput" accept=".xlsx,.xls">
+      <div id="uploadResult" style="margin-top:10px;"></div>
+    </div>
+    <div class="panel">
+      <div class="section-title" style="margin-top:0;">혜택 태그 편집</div>
+      <p class="small">특정 카드에 계산기가 읽을 수 있는 구조화된 혜택 규칙을 추가/삭제합니다. 변경사항은 이 브라우저에 자동 저장됩니다.</p>
+      <div class="field" style="max-width:360px;"><label>카드 선택</label><select id="tagCardSelect"></select></div>
+      <div id="tagEditor" class="tag-editor"></div>
+    </div>
+    <div class="panel">
+      <div class="section-title" style="margin-top:0;">내보내기</div>
+      <div class="row">
+        <button class="btn secondary" id="exportJsonBtn">📄 cards.json 다운로드</button>
+        <button class="btn" id="exportHtmlBtn">💾 이 상태 그대로 index.html 다운로드</button>
+        <button class="btn ghost" id="clearLocalBtn">브라우저 저장 데이터 초기화</button>
+      </div>
+      <p class="small" style="margin-top:8px;">HTML로 내보내면 지금까지의 태깅/업로드 변경사항이 전부 포함된 새 index.html이 저장됩니다. 이 파일을 저장소의 index.html로 교체하면 됩니다.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- 상태 ---------- */
+var BASE_DATA = JSON.parse(document.getElementById('card-data').textContent || '{}');
+var STORAGE_KEY = 'card-picker-state-v1';
+var state = null; // { spendCategories, metaCategories, cards: [...] , meta }
+
+function loadState(){
+  var stored = null;
+  try{
+    var s = localStorage.getItem(STORAGE_KEY);
+    if(s) stored = JSON.parse(s);
+  }catch(e){ /* 저장소 접근 불가 - 무시 */ }
+  state = stored || JSON.parse(JSON.stringify(BASE_DATA));
+  if(!state.cards) state.cards = [];
+  if(!state.spendCategories) state.spendCategories = BASE_DATA.spendCategories || [];
+  if(!state.metaCategories) state.metaCategories = BASE_DATA.metaCategories || {};
+}
+function saveState(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){ /* 무시 */ }
+}
+
+/* ---------- 유틸 ---------- */
+function won(n){
+  if(n===null || n===undefined || isNaN(n)) return '-';
+  return Math.round(n).toLocaleString('ko-KR') + '원';
+}
+function groupBadgeClass(g){
+  if(g==='프리미엄') return 'premium';
+  if(g==='일상') return 'daily';
+  if(g==='마일리지') return 'mile';
+  return 'etc';
+}
+function el(tag, attrs, children){
+  var e = document.createElement(tag);
+  attrs = attrs || {};
+  Object.keys(attrs).forEach(function(k){
+    if(k === 'text') e.textContent = attrs[k];
+    else if(k === 'html') e.innerHTML = attrs[k];
+    else if(k.indexOf('on')===0 && typeof attrs[k]==='function') e.addEventListener(k.slice(2), attrs[k]);
+    else e.setAttribute(k, attrs[k]);
+  });
+  (children||[]).forEach(function(c){ if(c) e.appendChild(c); });
+  return e;
+}
+
+/* ---------- 카테고리 확장 (meta -> 실제 카테고리 id 목록) ---------- */
+function expandCategories(ids){
+  var out = [];
+  (ids||[]).forEach(function(id){
+    if(state.metaCategories[id]){
+      out = out.concat(state.metaCategories[id].includes);
+    } else {
+      out.push(id);
+    }
+  });
+  return out;
+}
+function catLabel(id){
+  var c = state.spendCategories.find(function(x){return x.id===id;});
+  return c ? c.label : id;
+}
+
+/* ---------- 탭 ---------- */
+document.querySelectorAll('nav.tabs button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('nav.tabs button').forEach(function(b){b.classList.remove('active');});
+    document.querySelectorAll('.tabview').forEach(function(v){v.classList.remove('active');});
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---------- 테마 ---------- */
+document.getElementById('themeBtn').addEventListener('click', function(){
+  var cur = document.documentElement.getAttribute('data-theme');
+  var next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try{ localStorage.setItem('card-picker-theme', next); }catch(e){}
+});
+try{
+  var savedTheme = localStorage.getItem('card-picker-theme');
+  if(savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+}catch(e){}
+
+/* ---------- 메타 라인 ---------- */
+function renderMeta(){
+  var m = state.meta || {};
+  var line = (m.cardCount||state.cards.length) + '개 카드 · 구조화 완료 ' + (m.taggedCardCount!=null? m.taggedCardCount : state.cards.filter(function(c){return c.hasStructuredBenefits;}).length) + '개';
+  if(m.sourceFile) line += ' · 원본: ' + m.sourceFile;
+  if(m.generatedAt) line += ' · 생성: ' + m.generatedAt.slice(0,19).replace('T',' ');
+  document.getElementById('metaLine').textContent = line;
+}
+
+/* ---------- 카드 비교 탭 ---------- */
+function uniqueVals(field){
+  var s = {};
+  state.cards.forEach(function(c){ if(c[field]) s[c[field]] = true; });
+  return Object.keys(s).sort();
+}
+function populateFilterSelects(){
+  var gSel = document.getElementById('fGroup');
+  var iSel = document.getElementById('fIssuer');
+  gSel.innerHTML = '<option value="">전체</option>' + uniqueVals('group').map(function(g){return '<option value="'+g+'">'+g+'</option>';}).join('');
+  iSel.innerHTML = '<option value="">전체</option>' + uniqueVals('issuer').map(function(i){return '<option value="'+i+'">'+i+'</option>';}).join('');
+}
+function renderCompare(){
+  var q = document.getElementById('fSearch').value.trim().toLowerCase();
+  var g = document.getElementById('fGroup').value;
+  var iss = document.getElementById('fIssuer').value;
+  var fee = document.getElementById('fFee').value;
+  var taggedOnly = document.getElementById('fTaggedOnly').checked;
+  var body = document.getElementById('compareBody');
+  body.innerHTML = '';
+  state.cards
+    .filter(function(c){
+      if(q && c.name.toLowerCase().indexOf(q)===-1) return false;
+      if(g && c.group!==g) return false;
+      if(iss && c.issuer!==iss) return false;
+      if(fee && !(c.annualFee!=null && c.annualFee<=Number(fee))) return false;
+      if(taggedOnly && !c.hasStructuredBenefits) return false;
+      return true;
+    })
+    .forEach(function(c){
+      var tr = el('tr', {class:'clickable', onclick: function(){ showDetail(c.id); document.querySelector('nav.tabs button[data-tab="detail"]').click(); }}, [
+        el('td', {}, [el('span', {class:'badge '+groupBadgeClass(c.group), text: c.group||'기타'})]),
+        el('td', {text: c.issuer||'-'}),
+        el('td', {text: c.name}),
+        el('td', {text: c.annualFeeRaw!=null ? won(c.annualFee) : (c.annualFeeRaw||'-')}),
+        el('td', {text: c.familyCardFeeRaw!=null ? (typeof c.familyCardFee==='number'? won(c.familyCardFee) : c.familyCardFeeRaw) : '-'}),
+        el('td', {}, [el('span', {class:'badge '+(c.hasStructuredBenefits?'tagged':'untagged'), text: c.hasStructuredBenefits?'가능':'미구조화'})])
+      ]);
+      body.appendChild(tr);
+    });
+}
+['fSearch','fGroup','fIssuer','fFee','fTaggedOnly'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', renderCompare);
+  document.getElementById(id).addEventListener('change', renderCompare);
+});
+
+/* ---------- 카드 상세 탭 ---------- */
+var RAW_LABEL_ORDER = ['연간 혜택','혜택','멤버십','마일리지','할인','적립','라운지','공항','발레파킹','Visa','카드사','이벤트','그외'];
+function populateDetailSelect(){
+  var sel = document.getElementById('detailSelect');
+  sel.innerHTML = state.cards.map(function(c){ return '<option value="'+c.id+'">['+(c.group||'기타')+'] '+c.name+' ('+(c.issuer||'-')+')</option>'; }).join('');
+  sel.onchange = function(){ showDetail(sel.value); };
+}
+function benefitTypeLabel(t){
+  return {discount:'청구할인', accrual:'포인트적립', mileage:'마일리지적립', feeDiscount:'수수료할인', fixedDiscount:'정액할인'}[t] || t;
+}
+function showDetail(id){
+  var c = state.cards.find(function(x){return x.id===id;});
+  if(!c) return;
+  document.getElementById('detailSelect').value = id;
+  var body = document.getElementById('detailBody');
+  body.innerHTML = '';
+  var head = el('div', {class:'row', style:'margin-bottom:10px;'}, [
+    el('span', {class:'badge '+groupBadgeClass(c.group), text: c.group||'기타'}),
+    el('b', {text: c.name, style:'font-size:17px;'}),
+    el('span', {class:'muted', text: c.issuer||''}),
+  ]);
+  body.appendChild(head);
+  var feeLine = el('div', {class:'small muted', text: '연회비 ' + (c.annualFeeRaw!=null? won(c.annualFee) : '정보 없음') + '  ·  가족카드 ' + (c.familyCardFeeRaw!=null ? (typeof c.familyCardFee==='number'? won(c.familyCardFee): c.familyCardFeeRaw) : '정보 없음')});
+  body.appendChild(feeLine);
+
+  if(!c.researched){
+    body.appendChild(el('div', {class:'notice', style:'margin-top:12px;', text:'이 카드는 아직 세부 혜택이 조사되지 않았습니다 (엑셀에 카드사 정보만 있음).'}));
+  }
+
+  if(c.benefits && c.benefits.length){
+    body.appendChild(el('div', {class:'section-title', text:'구조화된 혜택 (계산기 반영)'}));
+    var tbl = el('table');
+    var thead = el('thead', {}, [el('tr', {}, ['카테고리','유형','율/금액','한도','조건 / 비고'].map(function(h){return el('th', {text:h});}))]);
+    tbl.appendChild(thead);
+    var tbody = el('tbody');
+    c.benefits.forEach(function(b){
+      var cats = (b.categories||[]).map(function(id){ return state.metaCategories[id] ? state.metaCategories[id].label : catLabel(id); }).join(', ');
+      var excl = (b.excludeCategories||[]).map(catLabel).join(', ');
+      var valueStr = '';
+      if(b.type==='fixedDiscount') valueStr = won(b.amount) + (b.minSpend? (' ('+won(b.minSpend)+' 이상)') : '');
+      else valueStr = (b.rate*100).toFixed(b.rate<0.01?2:1) + '%';
+      tbody.appendChild(el('tr', {}, [
+        el('td', {text: cats + (excl? (' (제외: '+excl+')') : '')}),
+        el('td', {text: benefitTypeLabel(b.type)}),
+        el('td', {text: valueStr}),
+        el('td', {text: b.cap? won(b.cap) : '-'}),
+        el('td', {text: [b.condition, b.note].filter(Boolean).join(' · ') || '-'})
+      ]));
+    });
+    tbl.appendChild(tbody);
+    body.appendChild(tbl);
+  }
+
+  body.appendChild(el('div', {class:'section-title', text:'원문 (엑셀)'}));
+  RAW_LABEL_ORDER.concat(Object.keys(c.raw||{}).filter(function(k){return RAW_LABEL_ORDER.indexOf(k)===-1;})).forEach(function(label){
+    if(!c.raw || !c.raw[label]) return;
+    body.appendChild(el('div', {class:'small', style:'font-weight:700;margin-top:10px;', text:label}));
+    body.appendChild(el('div', {class:'pre', text: String(c.raw[label])}));
+  });
+}
+
+/* ---------- 혜택 계산기 탭 ---------- */
+function renderSpendInputs(){
+  var wrap = document.getElementById('spendInputs');
+  wrap.innerHTML = '';
+  var saved = {};
+  try{ saved = JSON.parse(localStorage.getItem('card-picker-spend')||'{}'); }catch(e){}
+  state.spendCategories.forEach(function(cat){
+    var input = el('input', {type:'number', id:'sp_'+cat.id, placeholder:'0'});
+    if(saved[cat.id]) input.value = saved[cat.id];
+    wrap.appendChild(el('div', {class:'field'}, [
+      el('label', {text: cat.label}),
+      input
+    ]));
+  });
+}
+function getSpend(){
+  var out = {};
+  state.spendCategories.forEach(function(cat){
+    var v = Number(document.getElementById('sp_'+cat.id).value || 0);
+    out[cat.id] = isNaN(v) ? 0 : v;
+  });
+  return out;
+}
+function computeCardBenefit(card, spend, mileValue){
+  var lines = [];
+  var total = 0;
+  (card.benefits||[]).forEach(function(b){
+    var included = expandCategories(b.categories);
+    var excluded = expandCategories(b.excludeCategories||[]);
+    var catSpend = included.filter(function(id){return excluded.indexOf(id)===-1;})
+      .reduce(function(sum,id){ return sum + (spend[id]||0); }, 0);
+    var amount = 0;
+    if(b.type==='fixedDiscount'){
+      amount = (catSpend >= (b.minSpend||0) && catSpend>0) ? b.amount : 0;
+    } else if(b.type==='mileage'){
+      var miles = catSpend * b.rate;
+      amount = miles * mileValue;
+    } else { // discount, accrual, feeDiscount
+      amount = catSpend * b.rate;
+    }
+    if(b.cap!=null) amount = Math.min(amount, b.cap);
+    total += amount;
+    lines.push({benefit:b, catSpend:catSpend, amount:amount});
+  });
+  return {total: total, lines: lines};
+}
+function renderRanking(){
+  var spend = getSpend();
+  try{ localStorage.setItem('card-picker-spend', JSON.stringify(spend)); }catch(e){}
+  var mileValue = Number(document.getElementById('mileValue').value || 20);
+  var totalSpend = Object.keys(spend).reduce(function(s,k){return s+spend[k];},0);
+
+  var tagged = state.cards.filter(function(c){ return c.benefits && c.benefits.length; });
+  var results = tagged.map(function(c){
+    var r = computeCardBenefit(c, spend, mileValue);
+    var feeMonthly = (c.annualFee||0)/12;
+    return { card:c, monthlyBenefit:r.total, lines:r.lines, feeMonthly:feeMonthly, net: r.total - feeMonthly };
+  }).sort(function(a,b){ return b.net - a.net; });
+
+  document.getElementById('rankSummary').textContent = '월 소비 합계 ' + won(totalSpend) + ' 기준 · 구조화된 ' + tagged.length + '개 카드 비교';
+
+  var list = document.getElementById('rankList');
+  list.innerHTML = '';
+  results.forEach(function(r, idx){
+    var card = el('div', {class:'rank-card'+(idx===0 && totalSpend>0 ? ' top1':'')});
+    var head = el('div', {class:'rank-head'}, [
+      el('div', {}, [
+        el('span', {class:'badge '+groupBadgeClass(r.card.group), text: (idx+1)+'위 · '+(r.card.group||'기타')}),
+        el('span', {class:'rank-name', style:'margin-left:8px;', text: r.card.name})
+      ]),
+      el('div', {class:'rank-net '+(r.net>=0?'pos':'neg'), text: '순혜택 ' + won(r.net) + '/월'})
+    ]);
+    card.appendChild(head);
+    card.appendChild(el('div', {class:'small muted', text: '예상 월 혜택 ' + won(r.monthlyBenefit) + '  -  연회비(월환산) ' + won(r.feeMonthly)}));
+    var toggle = el('div', {class:'detail-toggle', text:'▸ 계산 내역 보기'});
+    var bd = el('div', {class:'breakdown'});
+    var bt = el('table');
+    bt.appendChild(el('thead', {}, [el('tr', {}, ['적용 카테고리','유형','매칭 지출','혜택 금액','비고'].map(function(h){return el('th',{text:h});}))]));
+    var btbody = el('tbody');
+    r.lines.forEach(function(l){
+      var cats = (l.benefit.categories||[]).map(function(id){ return state.metaCategories[id]?state.metaCategories[id].label:catLabel(id); }).join(', ');
+      btbody.appendChild(el('tr', {}, [
+        el('td', {text:cats}),
+        el('td', {text:benefitTypeLabel(l.benefit.type)}),
+        el('td', {text:won(l.catSpend)}),
+        el('td', {text:won(l.amount)}),
+        el('td', {text:[l.benefit.condition,l.benefit.note].filter(Boolean).join(' · ')})
+      ]));
+    });
+    bt.appendChild(btbody);
+    bd.appendChild(bt);
+    toggle.addEventListener('click', function(){
+      bd.classList.toggle('open');
+      toggle.textContent = bd.classList.contains('open') ? '▾ 계산 내역 닫기' : '▸ 계산 내역 보기';
+    });
+    card.appendChild(toggle);
+    card.appendChild(bd);
+    list.appendChild(card);
+  });
+  if(!results.length){
+    list.appendChild(el('div', {class:'muted small', text:'아직 구조화된 혜택 데이터가 있는 카드가 없습니다.'}));
+  }
+
+  var untagged = state.cards.filter(function(c){ return !(c.benefits && c.benefits.length); });
+  document.getElementById('untaggedList').textContent = untagged.length ? untagged.map(function(c){return c.name;}).join(', ') : '없음';
+}
+document.getElementById('calcBtn').addEventListener('click', renderRanking);
+document.getElementById('mileValue').addEventListener('change', renderRanking);
+document.getElementById('resetSpendBtn').addEventListener('click', function(){
+  state.spendCategories.forEach(function(cat){ document.getElementById('sp_'+cat.id).value=''; });
+  try{ localStorage.removeItem('card-picker-spend'); }catch(e){}
+  renderRanking();
+});
+
+/* ---------- xlsx 업로드 (브라우저 파싱) ---------- */
+var TOP_LEVEL_FIELDS = {'카드사':1,'연회비':1,'가족카드':1};
+
+function parseWorkbookToRawCards(wb){
+  var sheetName = wb.SheetNames.find(function(n){ return n.indexOf('카드') !== -1; }) || wb.SheetNames[0];
+  var ws = wb.Sheets[sheetName];
+  var ref = ws['!ref'];
+  var range = XLSX.utils.decode_range(ref);
+  var merges = ws['!merges'] || [];
+
+  function cellAt(r,c){
+    var addr = XLSX.utils.encode_cell({r:r, c:c});
+    var cell = ws[addr];
+    if(!cell) return null;
+    var v = cell.v;
+    if(typeof v === 'string'){ v = v.trim(); if(v==='') return null; }
+    return v;
+  }
+
+  var groupMap = {};
+  merges.forEach(function(m){
+    if(m.s.r===0 && m.e.r===0){
+      var label = cellAt(0, m.s.c);
+      for(var c=m.s.c; c<=m.e.c; c++) groupMap[c]=label;
+    }
+  });
+  for(var c=1;c<=range.e.c;c++){
+    var v = cellAt(0,c);
+    if(v && groupMap[c]===undefined) groupMap[c]=v;
+  }
+
+  var rowLabels = {};
+  for(var r=0;r<=range.e.r;r++){
+    if(r===1) continue; // 카드명 행
+    var lv = cellAt(r,0);
+    if(lv) rowLabels[r]=String(lv).trim();
+  }
+
+  var cards = [];
+  for(var col=1; col<=range.e.c; col++){
+    var name = cellAt(1,col);
+    if(!name) continue;
+    var fields = {};
+    Object.keys(rowLabels).forEach(function(rk){
+      var rr = Number(rk);
+      var val = cellAt(rr,col);
+      if(val!==null) fields[rowLabels[rk]] = val;
+    });
+    cards.push({name:name, group:groupMap[col]||null, fields:fields});
+  }
+  return {sourceFile:null, sheet:sheetName, cardCount:cards.length, cards:cards};
+}
+
+function slugify(name, seen){
+  var base = name.trim().replace(/[^\wㄱ-힝]+/g,'-').replace(/^-+|-+$/g,'').toLowerCase() || 'card';
+  var slug = base, n=2;
+  while(seen[slug]){ slug = base+'-'+n; n++; }
+  seen[slug]=1;
+  return slug;
+}
+
+function mergeRawWithTags(rawResult, tagCardsByName){
+  var seen = {};
+  var cardsOut = rawResult.cards.map(function(c){
+    var fields = c.fields || {};
+    var rawFields = {};
+    Object.keys(fields).forEach(function(k){ if(!TOP_LEVEL_FIELDS[k]) rawFields[k]=fields[k]; });
+    var tagEntry = tagCardsByName[c.name];
+    var benefits = tagEntry ? tagEntry.benefits : [];
+    var annualFee = typeof fields['연회비']==='number' ? fields['연회비'] : null;
+    var familyFee = typeof fields['가족카드']==='number' ? fields['가족카드'] : null;
+    return {
+      id: slugify(c.name, seen),
+      name: c.name,
+      issuer: fields['카드사']||null,
+      group: c.group,
+      annualFee: annualFee,
+      annualFeeRaw: fields['연회비']!==undefined ? fields['연회비'] : null,
+      familyCardFee: familyFee,
+      familyCardFeeRaw: fields['가족카드']!==undefined ? fields['가족카드'] : null,
+      raw: rawFields,
+      benefits: benefits,
+      hasStructuredBenefits: !!(benefits && benefits.length),
+      researched: Object.keys(rawFields).length>0 || (benefits && benefits.length>0)
+    };
+  });
+  return cardsOut;
+}
+
+document.getElementById('xlsxInput').addEventListener('change', function(evt){
+  var file = evt.target.files[0];
+  if(!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      var data = new Uint8Array(e.target.result);
+      var wb = XLSX.read(data, {type:'array'});
+      var rawResult = parseWorkbookToRawCards(wb);
+      rawResult.sourceFile = file.name;
+
+      var tagCardsByName = {};
+      state.cards.forEach(function(c){
+        if(c.benefits && c.benefits.length) tagCardsByName[c.name] = {benefits: c.benefits};
+      });
+
+      var oldNames = {}; state.cards.forEach(function(c){oldNames[c.name]=1;});
+      var newCards = mergeRawWithTags(rawResult, tagCardsByName);
+      var addedNames = newCards.filter(function(c){return !oldNames[c.name];}).map(function(c){return c.name;});
+      var untaggedNames = newCards.filter(function(c){return !c.hasStructuredBenefits;}).map(function(c){return c.name;});
+
+      state.cards = newCards;
+      state.meta = {
+        generatedAt: new Date().toISOString(),
+        sourceFile: file.name,
+        cardCount: newCards.length,
+        taggedCardCount: newCards.filter(function(c){return c.hasStructuredBenefits;}).length
+      };
+      saveState();
+      refreshAll();
+
+      var resultBox = document.getElementById('uploadResult');
+      resultBox.innerHTML = '';
+      resultBox.appendChild(el('div', {class:'notice', text:
+        '반영 완료: 총 '+newCards.length+'개 카드' +
+        (addedNames.length? (' · 신규 '+addedNames.length+'개 ('+addedNames.join(', ')+')') : '') +
+        (untaggedNames.length? (' · 미구조화 '+untaggedNames.length+'개') : '')
+      }));
+    }catch(err){
+      document.getElementById('uploadResult').innerHTML = '';
+      document.getElementById('uploadResult').appendChild(el('div', {class:'notice', style:'color:var(--bad);border-color:var(--bad);', text:'파싱 실패: '+err.message}));
+    }
+  };
+  reader.readAsArrayBuffer(file);
+});
+
+/* ---------- 태그 편집기 ---------- */
+var BENEFIT_TYPES = [
+  {id:'discount', label:'청구할인 (%)'},
+  {id:'accrual', label:'포인트적립 (%)'},
+  {id:'mileage', label:'마일리지적립 (마일/1000원 -> 소수, 예 0.001)'},
+  {id:'feeDiscount', label:'수수료할인 (%)'},
+  {id:'fixedDiscount', label:'정액할인 (조건 충족시 고정금액)'}
+];
+
+function populateTagCardSelect(){
+  var sel = document.getElementById('tagCardSelect');
+  sel.innerHTML = state.cards.map(function(c){ return '<option value="'+c.id+'">'+(c.hasStructuredBenefits?'✅ ':'')+c.name+'</option>'; }).join('');
+  sel.onchange = function(){ renderTagEditor(sel.value); };
+}
+function renderTagEditor(cardId){
+  var card = state.cards.find(function(c){return c.id===cardId;});
+  var wrap = document.getElementById('tagEditor');
+  wrap.innerHTML = '';
+  if(!card) return;
+  var listWrap = el('div', {id:'tagList'});
+  wrap.appendChild(listWrap);
+  renderTagList();
+
+  function renderTagList(){
+    listWrap.innerHTML = '';
+    (card.benefits||[]).forEach(function(b, idx){
+      var cats = (b.categories||[]).map(function(id){ return state.metaCategories[id] ? state.metaCategories[id].label : catLabel(id); }).join(', ');
+      var row = el('div', {class:'small', style:'border:1px solid var(--border);border-radius:8px;padding:8px 10px;margin-bottom:6px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start;'}, [
+        el('div', {text: '['+benefitTypeLabel(b.type)+'] '+cats+' · '+(b.type==='fixedDiscount'? won(b.amount) : (b.rate*100)+'%') + (b.cap? (' · 한도 '+won(b.cap)) : '') + (b.condition? (' · '+b.condition):'')}),
+        el('span', {class:'remove-x', text:'✕', onclick:function(){ card.benefits.splice(idx,1); saveState(); renderTagList(); refreshAll(); }})
+      ]);
+      listWrap.appendChild(row);
+    });
+  }
+
+  var form = el('div', {style:'margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);'});
+  var catChips = el('div', {class:'chips'});
+  var selectedCats = [];
+  var metaKeys = Object.keys(state.metaCategories);
+  metaKeys.concat(state.spendCategories.map(function(c){return c.id;})).forEach(function(id){
+    var label = state.metaCategories[id] ? state.metaCategories[id].label : catLabel(id);
+    var chip = el('span', {class:'chip', text:label, onclick:function(){
+      chip.classList.toggle('on');
+      var i = selectedCats.indexOf(id);
+      if(i===-1) selectedCats.push(id); else selectedCats.splice(i,1);
+    }});
+    catChips.appendChild(chip);
+  });
+  var typeSel = el('select', {}, BENEFIT_TYPES.map(function(t){ return el('option', {value:t.id, text:t.label}); }));
+  var rateInput = el('input', {type:'number', step:'0.001', placeholder:'율 (0.05 = 5%)'});
+  var capInput = el('input', {type:'number', placeholder:'한도(원, 선택)'});
+  var amountInput = el('input', {type:'number', placeholder:'정액금액(원, 정액할인일때)'});
+  var minSpendInput = el('input', {type:'number', placeholder:'최소지출(정액할인일때)'});
+  var condInput = el('input', {type:'text', placeholder:'조건 (예: 전월실적 50만원)', style:'width:220px;'});
+  var noteInput = el('input', {type:'text', placeholder:'비고', style:'width:220px;'});
+  var addBtn = el('button', {class:'btn', text:'혜택 규칙 추가', style:'margin-top:8px;', onclick:function(){
+    if(!selectedCats.length){ alert('카테고리를 하나 이상 선택하세요.'); return; }
+    var b = { categories: selectedCats.slice(), type: typeSel.value, condition: condInput.value||null, note: noteInput.value||null };
+    if(typeSel.value==='fixedDiscount'){
+      b.amount = Number(amountInput.value||0);
+      b.minSpend = Number(minSpendInput.value||0);
+    } else {
+      b.rate = Number(rateInput.value||0);
+      b.cap = capInput.value ? Number(capInput.value) : null;
+    }
+    if(!card.benefits) card.benefits = [];
+    card.benefits.push(b);
+    saveState();
+    renderTagList();
+    refreshAll();
+    selectedCats = [];
+    catChips.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');});
+    rateInput.value=''; capInput.value=''; amountInput.value=''; minSpendInput.value=''; condInput.value=''; noteInput.value='';
+  }});
+
+  form.appendChild(el('div', {class:'small', style:'margin-bottom:4px;', text:'적용 카테고리 선택'}));
+  form.appendChild(catChips);
+  form.appendChild(el('div', {class:'row', style:'margin-top:8px;'}, [typeSel, rateInput, capInput, amountInput, minSpendInput, condInput, noteInput]));
+  form.appendChild(addBtn);
+  wrap.appendChild(form);
+}
+
+/* ---------- 내보내기 ---------- */
+document.getElementById('exportJsonBtn').addEventListener('click', function(){
+  var payload = {meta: state.meta, spendCategories: state.spendCategories, metaCategories: state.metaCategories, cards: state.cards};
+  var blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'cards.json';
+  a.click();
+});
+document.getElementById('exportHtmlBtn').addEventListener('click', function(){
+  var payload = {meta: state.meta, spendCategories: state.spendCategories, metaCategories: state.metaCategories, cards: state.cards};
+  var doc = document.documentElement.cloneNode(true);
+  var scriptEl = doc.querySelector('#card-data');
+  scriptEl.textContent = JSON.stringify(payload);
+  var html = '<!DOCTYPE html>\n' + doc.outerHTML;
+  var blob = new Blob([html], {type:'text/html'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'index.html';
+  a.click();
+});
+document.getElementById('clearLocalBtn').addEventListener('click', function(){
+  if(!confirm('이 브라우저에 저장된 태깅/업로드 데이터를 모두 초기화하고 원본 데이터로 되돌립니다. 계속할까요?')) return;
+  try{ localStorage.removeItem(STORAGE_KEY); localStorage.removeItem('card-picker-spend'); }catch(e){}
+  loadState();
+  refreshAll();
+});
+
+/* ---------- 전체 갱신 ---------- */
+function refreshAll(){
+  renderMeta();
+  populateFilterSelects();
+  renderCompare();
+  populateDetailSelect();
+  if(state.cards.length) showDetail(state.cards[0].id);
+  renderSpendInputs();
+  renderRanking();
+  populateTagCardSelect();
+  if(state.cards.length) renderTagEditor(state.cards[0].id);
+}
+
+loadState();
+refreshAll();
+})();
+</script>
+</body>
+</html>
