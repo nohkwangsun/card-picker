@@ -1,0 +1,41 @@
+{
+  "_readme": "카드 사용처 기준 카테고리. 단일 카테고리 트리가 아니라 여러 차원(dimensions)이 겹칠 수 있음 — 예: '국내 + 온라인 + 푸드' 배달앱 결제. usageCategories는 실제 업종/용도, dimensions는 그 위에 겹쳐지는 지역/채널 구분. 아직 data/benefit_tags.json의 spendCategories(계산기가 실제로 쓰는 목록)에는 반영 안 됨 — 확정되면 병합 필요.",
+  "dimensions": {
+    "region": [
+      { "id": "domestic", "label": "국내" },
+      { "id": "overseas", "label": "해외" }
+    ],
+    "channel": [
+      { "id": "online", "label": "온라인" },
+      { "id": "offline", "label": "오프라인" }
+    ]
+  },
+  "usageCategories": [
+    { "id": "transit", "label": "교통", "examples": ["K패스", "대중교통", "택시", "고속버스", "기차"], "source": "user" },
+    { "id": "gas", "label": "주유", "examples": ["주유소", "하이패스"], "source": "user" },
+    { "id": "shopping", "label": "쇼핑", "examples": ["온라인", "오프라인"], "source": "user" },
+    { "id": "ottSubscription", "label": "OTT 구독", "examples": ["넷플릭스", "유튜브", "디즈니"], "source": "user" },
+    { "id": "membershipSubscription", "label": "멤버십 구독", "examples": ["쿠팡", "컬리"], "source": "user" },
+    { "id": "food", "label": "푸드", "examples": [], "source": "user" },
+    { "id": "cafe", "label": "카페", "examples": [], "source": "user" },
+    { "id": "health", "label": "건강", "examples": [], "source": "user" },
+    { "id": "beauty", "label": "뷰티", "examples": [], "source": "user" },
+    { "id": "education", "label": "교육", "examples": [], "source": "user" },
+    { "id": "childcare", "label": "육아", "examples": [], "source": "user" },
+    { "id": "culture", "label": "문화", "examples": [], "source": "user" },
+    { "id": "leisure", "label": "여가", "examples": [], "source": "user" },
+    { "id": "simplePay", "label": "간편결제", "examples": ["네이버페이", "삼성페이", "카카오페이", "Paygo", "KB페이"], "source": "user" },
+    { "id": "flight", "label": "항공권", "examples": [], "source": "user" },
+
+    { "id": "convenience", "label": "편의점", "examples": ["CU", "GS25", "세븐일레븐"], "source": "suggested", "note": "카드 혜택표에서 가장 흔한 단독 카테고리라 별도로 뺐습니다. '쇼핑(오프라인)'과 겹칠 수 있어 어느 쪽에 둘지 확인 필요." },
+    { "id": "mart", "label": "대형마트/백화점", "examples": ["이마트", "홈플러스", "롯데백화점"], "source": "suggested" },
+    { "id": "deliveryApp", "label": "배달앱", "examples": ["배달의민족", "요기요", "쿠팡이츠"], "source": "suggested", "note": "'푸드'와 겹칠 수 있어 하위 예시로 넣을지 별도 카테고리로 둘지 확인 필요." },
+    { "id": "utilityBill", "label": "공과금 자동납부", "examples": ["통신요금", "전기", "도시가스", "수도"], "source": "suggested" },
+    { "id": "aptFee", "label": "아파트 관리비", "examples": [], "source": "user_requested", "note": "공과금과 별도로 관리비만 우대하는 카드가 많아 분리했습니다." },
+    { "id": "lodging", "label": "숙박/호텔", "examples": [], "source": "suggested", "note": "항공권과 짝지어 '여행' 혜택으로 묶는 카드가 많아 추가했습니다." },
+    { "id": "dutyFree", "label": "면세점", "examples": [], "source": "suggested" },
+    { "id": "golf", "label": "골프", "examples": [], "source": "suggested" },
+    { "id": "pet", "label": "반려동물", "examples": [], "source": "suggested", "note": "최근 카드 혜택표에 늘고 있는 카테고리." },
+    { "id": "mobility", "label": "모빌리티/렌터카", "examples": ["쏘카", "그린카", "따릉이"], "source": "suggested" }
+  ]
+}
