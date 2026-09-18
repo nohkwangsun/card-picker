@@ -108,8 +108,10 @@
     },
     "ID 글로벌": {
       "benefits": [
+        { "categories": ["ott"], "type": "discount", "rate": 0.5, "cap": 20000, "minCardSpend": 500000, "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)", "note": "국내 인앱결제/디지털콘텐츠(구글플레이,앱스토어,넷플릭스,디즈니,유튜브,쿠팡,네이버) 50%" },
+        { "categories": ["onlineShopping","flight","hotel","mart","convenience","cafe","gas"], "type": "discount", "rate": 0.01, "cap": null, "minCardSpend": 0, "condition": "무실적, 한도 없음", "note": "국내 일상 1% 결제일할인 (페이,항공,여행,온라인,백화점,홈쇼핑,편의점,카페,주유 등)" },
+        { "categories": ["domesticAll"], "excludeCategories": ["ott","onlineShopping","flight","hotel","mart","convenience","cafe","gas"], "type": "discount", "rate": 0.005, "cap": null, "minCardSpend": 0, "condition": "무실적, 한도 없음", "note": "그 외 국내 결제 기본 0.5% (위 1%/50% 대상 항목 제외, 중복 방지용 근사치)" },
         { "categories": ["overseasOffline","overseasOnline"], "type": "discount", "rate": 0.02, "cap": 300000, "minCardSpend": 0, "condition": null, "note": "해외 온오프라인 2% 결제일할인" },
-        { "categories": ["ott"], "type": "discount", "rate": 0.5, "cap": 20000, "minCardSpend": 500000, "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)", "note": "국내 인앱결제/디지털콘텐츠(구글,앱스,넷플,디즈니,유튜브,쿠팡,네이버페이) 50%" },
         { "categories": ["overseasOffline","overseasOnline"], "type": "feeDiscount", "rate": 0.012, "cap": null, "minCardSpend": 0, "condition": "무실적", "note": "해외결제 수수료 1.2%(1+0.2%p) 결제일할인, 한도 없음" },
         { "categories": ["overseasOffline"], "type": "discount", "rate": 0.05, "cap": 20000, "minCardSpend": 500000, "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)", "note": "해외 오프라인 삼성페이 결제 5%" }
       ],
@@ -167,7 +169,24 @@
     },
     "네이버페이 머니카드": {
       "benefits": [
-        { "categories": ["overseasOffline","overseasOnline"], "type": "discount", "rate": 0.02, "cap": null, "minCardSpend": 0, "condition": "무실적, 해외 수수료 면제", "note": "해외 결제 2% 할인" }
+        { "categories": ["domesticAll"], "excludeCategories": ["onlineShopping"], "type": "accrual", "rate": 0.003, "cap": null, "minCardSpend": 0, "condition": "무실적", "note": "국내 0.3% 적립" },
+        { "categories": ["onlineShopping"], "type": "accrual", "rate": 0.015, "cap": null, "minCardSpend": 0, "condition": "무실적", "note": "네이버페이 간편결제/네이버쇼핑 1.5% 적립 (0.3% 대신 적용, 중복 방지)" },
+        { "categories": ["overseasOffline","overseasOnline"], "type": "accrual", "rate": 0.02, "cap": null, "minCardSpend": 0, "condition": "무실적", "note": "해외 2% 적립 (수수료 0원)" }
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 0, "unlimited": false, "note": "The Lounge 이용료 약 3만원 할인 (무료입장 아님, 횟수로 환산 안 함)" },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": "공항 리무진 1,000~3,000원 할인 (횟수 무관 할인, 방문횟수로 환산 안 함)" },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      }
+    },
+    "ID 셀렉트 all": {
+      "benefits": [
+        { "categories": ["domesticAll"], "excludeCategories": ["utility","telecom"], "type": "discount", "rate": 0.007, "cap": 15000, "minCardSpend": 400000, "condition": "전월실적 40만/80만/120만원 구간, 한도 7천/1만/1만5천원. '아파트관리비/통신 10%' 또는 '교육 10%' 중 택1도 가능(더 유리할 수 있음, 원문 확인)", "note": "국내 결제 0.7% (3가지 옵션 중 기본값만 반영, 나머지는 원문 참고)" },
+        { "categories": ["dining","convenience","mart","gas"], "type": "discount", "rate": 0.07, "cap": 15000, "minCardSpend": 400000, "condition": "전월실적 40만/80만/120만원 구간, 한도 7천/1만/1만5천원. '온라인쇼핑몰/의료/배달앱 7%'와 택1", "note": "음식점/편의점/할인점/주유 7% (2개 옵션 중 하나만 반영, 원문 참고)" },
+        { "categories": ["ott"], "type": "discount", "rate": 0.5, "cap": 5000, "minCardSpend": 400000, "condition": "전월실적 40만원, 한도 5천원", "note": "디지털콘텐츠/멤버십(넷플릭스,유튜브,쿠팡) 50%" },
+        { "categories": ["overseasOffline","overseasOnline"], "type": "discount", "rate": 0.02, "cap": null, "minCardSpend": 0, "condition": "무실적, 무한도", "note": "해외 결제 2% 할인" }
       ],
       "perks": {
         "lounge": { "visitsPerYear": 0, "unlimited": false, "note": null },
@@ -176,6 +195,63 @@
         "membership": { "has": false, "note": null },
         "mileage": { "has": false }
       }
+    },
+    "skypass 아멕스 플래티늄": {
+      "benefits": [
+        { "categories": ["domesticAll"], "type": "mileage", "rate": 0.001, "minCardSpend": 0, "condition": "무실적, 한도 없음", "note": "국내 1마일/1,000원" },
+        { "categories": ["overseasAll"], "type": "mileage", "rate": 0.002, "minCardSpend": 500000, "condition": "전월실적 50만원, 한도 없음", "note": "해외 2마일/1,000원" }
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 2, "unlimited": false, "note": "인천공항 마티나/스카이허브 연 2회(월1회 한도), 전월실적 50만원" },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": true }
+      }
+    },
+    "마일리지 플래티넘 스카이패스 (SFC)": {
+      "benefits": [
+        { "categories": ["domesticAll", "overseasAll"], "type": "mileage", "rate": 0.001, "cap": null, "minCardSpend": 0, "condition": null, "note": "1마일/1,000원. 적립한도 월 2,000마일(계산기의 원화 한도로는 환산하지 않음 — 마일리지 환산가치를 바꾸면 실제 한도와 어긋날 수 있으니 원문 확인)" }
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 0, "unlimited": false, "note": null },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": true }
+      }
+    },
+    "NEED Pay": {
+      "benefits": [
+        { "categories": ["onlineShopping"], "type": "discount", "rate": 0.05, "cap": 5000, "minCardSpend": 0, "condition": "월 한도 5천원. 전월실적 부족 시 반기 1회 채워주는 예외 있음", "note": "온라인 패션몰(무신사,지그재그,29cm,w컨셉,에이블리) 5%" },
+        { "categories": ["ott"], "type": "discount", "rate": 0.3, "cap": 5000, "minCardSpend": 0, "condition": "건당 한도 3천원, 월 한도 5천원. 전월실적 부족 시 반기 1회 채워주는 예외 있음", "note": "디지털콘텐츠/멤버십(넷플릭스,유튜브,디즈니,티빙,웨이브,스포티파이,네이버,컬리,배민) 30%" },
+        { "categories": ["overseasOffline","overseasOnline"], "type": "discount", "rate": 0.02, "cap": null, "minCardSpend": 0, "condition": "무실적, 한도 없음", "note": "해외 2% 할인" }
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 0, "unlimited": false, "note": null },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      },
+      "_skipped": "KB Pay/네이버페이/카카오페이/토스페이 간편결제 할인(각 10~15%)은 결제수단 기준 혜택이라 소비 카테고리 모델로 매핑하지 않음 — 카드 상세 원문 참고"
+    },
+    "팟카드": {
+      "benefits": [
+        { "categories": ["convenience"], "type": "discount", "rate": 0.10, "cap": 4000, "minCardSpend": 400000, "condition": "월 3회. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)", "note": "편의점 10% 할인 — 통합한도를 항목 수로 나눈 근사치, 실제로는 다른 항목과 한도 공유" },
+        { "categories": ["cafe"], "type": "discount", "rate": 0.10, "cap": 4000, "minCardSpend": 400000, "condition": "월 2회. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)", "note": "스타벅스 10% 할인 — 통합한도 근사치" },
+        { "categories": ["ott"], "type": "discount", "rate": 0.30, "cap": 4000, "minCardSpend": 400000, "condition": "월 2회, 결제 8천원 이상. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)", "note": "넷플릭스/멜론/유튜브/디즈니 30% 할인 — 통합한도 근사치" },
+        { "categories": ["onlineShopping"], "type": "discount", "rate": 0.15, "cap": 4000, "minCardSpend": 400000, "condition": "결제 1만원 이상, 월 2회. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)", "note": "온라인쇼핑(무신사,에이블리,지그재그,컬리,SSG,쿠팡,G마켓,옥션,11번가) 15% 할인 — 통합한도 근사치" },
+        { "categories": ["dining"], "type": "discount", "rate": 0.10, "cap": 4000, "minCardSpend": 400000, "condition": "월 2회. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)", "note": "요기요/배민 10% 할인 — 통합한도 근사치" }
+      ],
+      "perks": {
+        "lounge": { "visitsPerYear": 0, "unlimited": false, "note": null },
+        "valet": { "visitsPerYear": 0, "note": null },
+        "airport": { "visitsPerYear": 0, "note": null },
+        "membership": { "has": false, "note": null },
+        "mileage": { "has": false }
+      },
+      "_skipped": "네이버/카카오/삼성페이 10%(결제수단 기준), 놀이공원 50%(해당 카테고리 없음)는 소비 카테고리 모델에 매핑하지 않음 — 카드 상세 원문 참고. 위 5개 항목은 실제로는 전월실적 구간별 통합한도(2만/4만원)를 공유하므로, 여러 카테고리에 동시에 소비가 있으면 계산기가 실제보다 혜택을 과대 계산할 수 있습니다."
     }
   }
 }

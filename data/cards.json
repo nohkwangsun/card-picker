@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generatedAt": "2026-09-18T09:40:50+00:00",
-    "sourceFile": "card_data.xlsx",
-    "cardCount": 19,
-    "taggedCardCount": 10
+    "generatedAt": "2026-09-18T10:22:20+00:00",
+    "sourceFile": "card_data_v2.xlsx",
+    "cardCount": 18,
+    "taggedCardCount": 15
   },
   "spendCategories": [
     {
@@ -359,7 +359,8 @@
       "raw": {
         "연간 혜택": ". 호텔or항공권or공연전시 15만원 할인\n* 첫해 50만원\n* 차년도 600만원",
         "혜택": ". 백화점,인터넷면세점 5% 할인\n. 골프연습장등 스포츠 5% 할인\n. 학원,편의점,커피전문점 5% 할인\n\n* 전월실적 40만/80만/150만\n* 실적별한도 1만/3만/5만\n* 청구할인에 중복 적용 (1+5)",
-        "할인": ". 국내 1% 청구할인\n. 해외 3% 청구할인\n* 무실적",
+        "할인": ". 국내 1% 청구할인\n* 무실적",
+        "해외 할인": ". 해외 3% 청구할인\n* 무실적",
         "라운지": ". The Lounge 10회\n. 국내공항 라운지 3회\n  (2여객 마티나,마티나골드, 1여객 스카이허브 등)\n* 전월실적 50만원",
         "발레파킹": ". 국내 호텔 월 5회 (연15회)\n. 인천공항 월 3회 (연5회)\n* 전월실적 50만원",
         "Visa": "Mastercard World 서비스",
@@ -564,10 +565,60 @@
       "familyCardFee": null,
       "familyCardFeeRaw": "x",
       "raw": {
-        "할인": ". 해외 온오프라인 2% 결제일할인\n* 할인한도 30만원\n\n. 국내 인앱결제/디지털콘텐츠 50% 결제일할인\n  (구글,앱스,넷플,디즈,유튜,쿠팡,네입)\n* 한도 1만/2만 (전월실적 50만/100만)\n\n. 해외결재 수수료 1.2% (1+0.2) 결제일할인\n* 무실적, 수수료할인 한도 없음\n\n. 해외 오프라인 삼성페이 결재시 5% 결제일할인\n* 한도 1만/2만 (전월실적 50만/100만)",
+        "할인": ". 국내 인앱결제/디지털콘텐츠 50% 결제일할인\n  (구글플레이,앱스토어,넷플릭스,디즈니,유튜브,쿠팡,네이버)\n* 한도 1만/2만 (전월실적 50만/100만)\n\n. 국내 일상 1% 결제일할인\n  (페이,항공,여행,온라인,백화점,홈쇼핑,편의점,카페,주유 등)\n* 무실적, 한도 없음\n\n. 국내 0.5% 결제일할인\n* 무실적, 한도없음",
+        "해외 할인": ". 해외 온오프라인 2% 결제일할인\n* 할인한도 30만원\n\n. 해외결재 수수료 1.2% (1+0.2) 결제일할인\n* 무실적, 수수료할인 한도 없음\n\n. 해외 오프라인 삼성페이 결재시 5% 결제일할인\n* 한도 1만/2만 (전월실적 50만/100만)",
         "라운지": ". The Lounge 2회 (월1회)\n* 전월실적 50만원"
       },
       "benefits": [
+        {
+          "categories": [
+            "ott"
+          ],
+          "type": "discount",
+          "rate": 0.5,
+          "cap": 20000,
+          "minCardSpend": 500000,
+          "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)",
+          "note": "국내 인앱결제/디지털콘텐츠(구글플레이,앱스토어,넷플릭스,디즈니,유튜브,쿠팡,네이버) 50%"
+        },
+        {
+          "categories": [
+            "onlineShopping",
+            "flight",
+            "hotel",
+            "mart",
+            "convenience",
+            "cafe",
+            "gas"
+          ],
+          "type": "discount",
+          "rate": 0.01,
+          "cap": null,
+          "minCardSpend": 0,
+          "condition": "무실적, 한도 없음",
+          "note": "국내 일상 1% 결제일할인 (페이,항공,여행,온라인,백화점,홈쇼핑,편의점,카페,주유 등)"
+        },
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "excludeCategories": [
+            "ott",
+            "onlineShopping",
+            "flight",
+            "hotel",
+            "mart",
+            "convenience",
+            "cafe",
+            "gas"
+          ],
+          "type": "discount",
+          "rate": 0.005,
+          "cap": null,
+          "minCardSpend": 0,
+          "condition": "무실적, 한도 없음",
+          "note": "그 외 국내 결제 기본 0.5% (위 1%/50% 대상 항목 제외, 중복 방지용 근사치)"
+        },
         {
           "categories": [
             "overseasOffline",
@@ -579,17 +630,6 @@
           "minCardSpend": 0,
           "condition": null,
           "note": "해외 온오프라인 2% 결제일할인"
-        },
-        {
-          "categories": [
-            "ott"
-          ],
-          "type": "discount",
-          "rate": 0.5,
-          "cap": 20000,
-          "minCardSpend": 500000,
-          "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)",
-          "note": "국내 인앱결제/디지털콘텐츠(구글,앱스,넷플,디즈니,유튜브,쿠팡,네이버페이) 50%"
         },
         {
           "categories": [
@@ -650,7 +690,8 @@
       "familyCardFee": null,
       "familyCardFeeRaw": "x",
       "raw": {
-        "할인": ". 해외 온오프라인 3.5% 결제일할인\n. 국내 온오프라인 0.7% 결제일할인\n* 한도 없음\n* 무실적",
+        "할인": ". 국내 온오프라인 0.7% 결제일할인\n* 무실적, 한도 없음",
+        "해외 할인": ". 해외 온오프라인 3.5% 결제일할인\n* 무실적, 한도 없음",
         "이벤트": "신규 고객. 연회비 전액 캐시백"
       },
       "benefits": [
@@ -708,15 +749,92 @@
       "name": "ID 셀렉트 all",
       "issuer": "삼성",
       "group": "일상",
-      "annualFee": null,
-      "annualFeeRaw": null,
+      "annualFee": 20000.0,
+      "annualFeeRaw": 20000.0,
       "familyCardFee": null,
-      "familyCardFeeRaw": null,
-      "raw": {},
-      "benefits": [],
-      "perks": null,
-      "hasStructuredBenefits": false,
-      "researched": false
+      "familyCardFeeRaw": "x",
+      "raw": {
+        "할인": ". 국내 0.7% 결제일할인\n  or 아파트 관리비/통신 10% 결제일할인\n  or 교육 10% 결제일할인\n  3개 중 하나\n* 한도 7천/1만/1만5천원 (전월실적 40만/80만/120만)\n\n. 온라인쇼핑몰/의료/배달앱 7% 결제일할인\n  or 음식점/편의점/할인점/주유 7% 결제일할인\n  2개 중 하나 선택\n* 한도 7천/1만/1만5천원 (전월실적 40만/80만/120만)\n\n. 다이소,NOL,알라딘,와이앤모어 5% 할인\n* 한도 5천원 (전월실적 40만)\n\n. 디지털콘텐츠/멤버십 50% 할인\n  (넷플릭스, 유튜브, 쿠팡)\n* 한도 5천원 (전월실적 40만)",
+        "해외 할인": ". 해외 결제 2% 할인\n* 무실적, 무한도"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "excludeCategories": [
+            "utility",
+            "telecom"
+          ],
+          "type": "discount",
+          "rate": 0.007,
+          "cap": 15000,
+          "minCardSpend": 400000,
+          "condition": "전월실적 40만/80만/120만원 구간, 한도 7천/1만/1만5천원. '아파트관리비/통신 10%' 또는 '교육 10%' 중 택1도 가능(더 유리할 수 있음, 원문 확인)",
+          "note": "국내 결제 0.7% (3가지 옵션 중 기본값만 반영, 나머지는 원문 참고)"
+        },
+        {
+          "categories": [
+            "dining",
+            "convenience",
+            "mart",
+            "gas"
+          ],
+          "type": "discount",
+          "rate": 0.07,
+          "cap": 15000,
+          "minCardSpend": 400000,
+          "condition": "전월실적 40만/80만/120만원 구간, 한도 7천/1만/1만5천원. '온라인쇼핑몰/의료/배달앱 7%'와 택1",
+          "note": "음식점/편의점/할인점/주유 7% (2개 옵션 중 하나만 반영, 원문 참고)"
+        },
+        {
+          "categories": [
+            "ott"
+          ],
+          "type": "discount",
+          "rate": 0.5,
+          "cap": 5000,
+          "minCardSpend": 400000,
+          "condition": "전월실적 40만원, 한도 5천원",
+          "note": "디지털콘텐츠/멤버십(넷플릭스,유튜브,쿠팡) 50%"
+        },
+        {
+          "categories": [
+            "overseasOffline",
+            "overseasOnline"
+          ],
+          "type": "discount",
+          "rate": 0.02,
+          "cap": null,
+          "minCardSpend": 0,
+          "condition": "무실적, 무한도",
+          "note": "해외 결제 2% 할인"
+        }
+      ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 0,
+          "unlimited": false,
+          "note": null
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
+      "hasStructuredBenefits": true,
+      "researched": true
     },
     {
       "id": "mr-life",
@@ -833,19 +951,57 @@
       "researched": false
     },
     {
-      "id": "마일리지-플래티넘-스카이패스",
-      "name": "마일리지 플래티넘 스카이패스",
+      "id": "마일리지-플래티넘-스카이패스-sfc",
+      "name": "마일리지 플래티넘 스카이패스 (SFC)",
       "issuer": "삼성",
       "group": "마일리지",
-      "annualFee": null,
-      "annualFeeRaw": null,
+      "annualFee": 49000.0,
+      "annualFeeRaw": 49000.0,
       "familyCardFee": null,
       "familyCardFeeRaw": null,
-      "raw": {},
-      "benefits": [],
-      "perks": null,
-      "hasStructuredBenefits": false,
-      "researched": false
+      "raw": {
+        "마일리지": ". 1/1000 MPW\n* 적립한도 2000 Mi",
+        "Visa": "Amex Platinum 서비스",
+        "이벤트": "신규 고객. 연회비 전액 캐시백"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "domesticAll",
+            "overseasAll"
+          ],
+          "type": "mileage",
+          "rate": 0.001,
+          "cap": null,
+          "minCardSpend": 0,
+          "condition": null,
+          "note": "1마일/1,000원. 적립한도 월 2,000마일(계산기의 원화 한도로는 환산하지 않음 — 마일리지 환산가치를 바꾸면 실제 한도와 어긋날 수 있으니 원문 확인)"
+        }
+      ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 0,
+          "unlimited": false,
+          "note": null
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": true
+        }
+      },
+      "hasStructuredBenefits": true,
+      "researched": true
     },
     {
       "id": "카드의정석-every-mile",
@@ -863,34 +1019,64 @@
       "researched": false
     },
     {
-      "id": "i-mileage",
-      "name": "i-mileage",
-      "issuer": "ibk",
-      "group": "마일리지",
-      "annualFee": null,
-      "annualFeeRaw": null,
-      "familyCardFee": null,
-      "familyCardFeeRaw": null,
-      "raw": {},
-      "benefits": [],
-      "perks": null,
-      "hasStructuredBenefits": false,
-      "researched": false
-    },
-    {
       "id": "skypass-아멕스-플래티늄",
       "name": "skypass 아멕스 플래티늄",
       "issuer": "하나",
       "group": "마일리지",
-      "annualFee": null,
-      "annualFeeRaw": null,
-      "familyCardFee": null,
-      "familyCardFeeRaw": null,
-      "raw": {},
-      "benefits": [],
-      "perks": null,
-      "hasStructuredBenefits": false,
-      "researched": false
+      "annualFee": 45000.0,
+      "annualFeeRaw": 45000.0,
+      "familyCardFee": 20000.0,
+      "familyCardFeeRaw": 20000.0,
+      "raw": {
+        "마일리지": ". 국내 1/1000 MPW\n* 무실적, 한도 없음\n\n. 해외 2/1000 MPW\n* 전월실적 50만원, 한도 없음",
+        "라운지": ". 인천공항 마티나, 스카이허브 연 2회 (월1회)\n* 전월실적 50만원"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "type": "mileage",
+          "rate": 0.001,
+          "minCardSpend": 0,
+          "condition": "무실적, 한도 없음",
+          "note": "국내 1마일/1,000원"
+        },
+        {
+          "categories": [
+            "overseasAll"
+          ],
+          "type": "mileage",
+          "rate": 0.002,
+          "minCardSpend": 500000,
+          "condition": "전월실적 50만원, 한도 없음",
+          "note": "해외 2마일/1,000원"
+        }
+      ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 2,
+          "unlimited": false,
+          "note": "인천공항 마티나/스카이허브 연 2회(월1회 한도), 전월실적 50만원"
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": true
+        }
+      },
+      "hasStructuredBenefits": true,
+      "researched": true
     },
     {
       "id": "bev-ⅴ카드-스카이패스형",
@@ -982,34 +1168,62 @@
     {
       "id": "네이버페이-머니카드",
       "name": "네이버페이 머니카드",
-      "issuer": null,
+      "issuer": "네이버",
       "group": null,
-      "annualFee": null,
-      "annualFeeRaw": null,
+      "annualFee": 0.0,
+      "annualFeeRaw": 0.0,
       "familyCardFee": null,
-      "familyCardFeeRaw": null,
+      "familyCardFeeRaw": "x",
       "raw": {
-        "연간 혜택": "해외2%. 수수료면제. 무실적"
+        "적립": ". 국내 0.3% 적립\n. 국내 간편결제 네이버 쇼핑 1.5% 적립\n. 해외 2% 적립 (수수료 0원)\n* 무실적",
+        "라운지": ". The Lounge 할인 (약 3만원)",
+        "공항": ". 공항 리무진 할인 (1000원 ~ 3000원)",
+        "Visa": "Visa Platinum 서비스"
       },
       "benefits": [
+        {
+          "categories": [
+            "domesticAll"
+          ],
+          "excludeCategories": [
+            "onlineShopping"
+          ],
+          "type": "accrual",
+          "rate": 0.003,
+          "cap": null,
+          "minCardSpend": 0,
+          "condition": "무실적",
+          "note": "국내 0.3% 적립"
+        },
+        {
+          "categories": [
+            "onlineShopping"
+          ],
+          "type": "accrual",
+          "rate": 0.015,
+          "cap": null,
+          "minCardSpend": 0,
+          "condition": "무실적",
+          "note": "네이버페이 간편결제/네이버쇼핑 1.5% 적립 (0.3% 대신 적용, 중복 방지)"
+        },
         {
           "categories": [
             "overseasOffline",
             "overseasOnline"
           ],
-          "type": "discount",
+          "type": "accrual",
           "rate": 0.02,
           "cap": null,
           "minCardSpend": 0,
-          "condition": "무실적, 해외 수수료 면제",
-          "note": "해외 결제 2% 할인"
+          "condition": "무실적",
+          "note": "해외 2% 적립 (수수료 0원)"
         }
       ],
       "perks": {
         "lounge": {
           "visitsPerYear": 0,
           "unlimited": false,
-          "note": null
+          "note": "The Lounge 이용료 약 3만원 할인 (무료입장 아님, 횟수로 환산 안 함)"
         },
         "valet": {
           "visitsPerYear": 0,
@@ -1017,7 +1231,7 @@
         },
         "airport": {
           "visitsPerYear": 0,
-          "note": null
+          "note": "공항 리무진 1,000~3,000원 할인 (횟수 무관 할인, 방문횟수로 환산 안 함)"
         },
         "membership": {
           "has": false,
@@ -1047,33 +1261,170 @@
     },
     {
       "id": "need-pay",
-      "name": "need pay",
+      "name": "NEED Pay",
       "issuer": "KB",
       "group": null,
-      "annualFee": null,
-      "annualFeeRaw": null,
-      "familyCardFee": null,
-      "familyCardFeeRaw": null,
-      "raw": {},
-      "benefits": [],
-      "perks": null,
-      "hasStructuredBenefits": false,
-      "researched": false
+      "annualFee": 19000.0,
+      "annualFeeRaw": 19000.0,
+      "familyCardFee": 7000.0,
+      "familyCardFeeRaw": 7000.0,
+      "raw": {
+        "할인": "[간편결제]\n. KB Pay 15% 할인 (건당 한도 3천원, 실적별 월 한도 1만5천/3만)\n. 네이버 페이 10% 할인 (건당 한도 2천원, 실적별 월 한도 1만/2만)\n. 카카오 페이 10% 할인 (건당 한도 2천원, 실적별 월 한도 1만/2만)\n. 토스 페이 10% 할인 (건당 한도 2천원, 실적별 월 한도 1만/2만)\n\n. 온라인 패션몰, 5% 할인 (월 한도 5천)\n  (무신사,지그재그,29cm,w컨셉,에이블리)\n\n. 디지털 콘텐츠/멤버십 30% 할인 (건당 한도 3천원, 월 한도 5천)\n  (넷플릭스,유튜브,디즈니,티빙,웨이브,스포티파이,네이버,컬리,배민)\n\n. 해외 2% 할인 (무실적, 한도 없음)\n\n* 전월실적 부족시 반기 1회 채워드림"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "onlineShopping"
+          ],
+          "type": "discount",
+          "rate": 0.05,
+          "cap": 5000,
+          "minCardSpend": 0,
+          "condition": "월 한도 5천원. 전월실적 부족 시 반기 1회 채워주는 예외 있음",
+          "note": "온라인 패션몰(무신사,지그재그,29cm,w컨셉,에이블리) 5%"
+        },
+        {
+          "categories": [
+            "ott"
+          ],
+          "type": "discount",
+          "rate": 0.3,
+          "cap": 5000,
+          "minCardSpend": 0,
+          "condition": "건당 한도 3천원, 월 한도 5천원. 전월실적 부족 시 반기 1회 채워주는 예외 있음",
+          "note": "디지털콘텐츠/멤버십(넷플릭스,유튜브,디즈니,티빙,웨이브,스포티파이,네이버,컬리,배민) 30%"
+        },
+        {
+          "categories": [
+            "overseasOffline",
+            "overseasOnline"
+          ],
+          "type": "discount",
+          "rate": 0.02,
+          "cap": null,
+          "minCardSpend": 0,
+          "condition": "무실적, 한도 없음",
+          "note": "해외 2% 할인"
+        }
+      ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 0,
+          "unlimited": false,
+          "note": null
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
+      "hasStructuredBenefits": true,
+      "researched": true
     },
     {
       "id": "팟카드",
       "name": "팟카드",
       "issuer": "부산은행",
       "group": null,
-      "annualFee": null,
-      "annualFeeRaw": null,
+      "annualFee": 15000.0,
+      "annualFeeRaw": 15000.0,
       "familyCardFee": null,
-      "familyCardFeeRaw": null,
-      "raw": {},
-      "benefits": [],
-      "perks": null,
-      "hasStructuredBenefits": false,
-      "researched": false
+      "familyCardFeeRaw": "x",
+      "raw": {
+        "할인": ". 네이버/카카오/삼성페이 10% 할인\n  (결제 1만원 이상, 한도 1.5만원, 월 2회)\n. 편의점 10% 할인 (월 3회)\n. 스타벅스 10% 할인 (월 2회)\n. 놀이공원 50% 할인 (월 1회)\n. 넷플릭스,멜론,유튜브,디즈니 30% 할인 (월 2회, 결제 8천원 이상)\n. 온라인쇼핑 15% 할인\n  (무신사,에이블리,지그재그,컬리,SSG,쿠팡,G마켓,옥션,11번가)\n  (결제 1만원 이상, 한도 1.5만원, 월 2회)\n. 요기요,배민 10% 할인 (월 2회)\n\n* 전월실적 40만원/80만원 각각 통합 한도 2만원/4만원"
+      },
+      "benefits": [
+        {
+          "categories": [
+            "convenience"
+          ],
+          "type": "discount",
+          "rate": 0.1,
+          "cap": 4000,
+          "minCardSpend": 400000,
+          "condition": "월 3회. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)",
+          "note": "편의점 10% 할인 — 통합한도를 항목 수로 나눈 근사치, 실제로는 다른 항목과 한도 공유"
+        },
+        {
+          "categories": [
+            "cafe"
+          ],
+          "type": "discount",
+          "rate": 0.1,
+          "cap": 4000,
+          "minCardSpend": 400000,
+          "condition": "월 2회. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)",
+          "note": "스타벅스 10% 할인 — 통합한도 근사치"
+        },
+        {
+          "categories": [
+            "ott"
+          ],
+          "type": "discount",
+          "rate": 0.3,
+          "cap": 4000,
+          "minCardSpend": 400000,
+          "condition": "월 2회, 결제 8천원 이상. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)",
+          "note": "넷플릭스/멜론/유튜브/디즈니 30% 할인 — 통합한도 근사치"
+        },
+        {
+          "categories": [
+            "onlineShopping"
+          ],
+          "type": "discount",
+          "rate": 0.15,
+          "cap": 4000,
+          "minCardSpend": 400000,
+          "condition": "결제 1만원 이상, 월 2회. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)",
+          "note": "온라인쇼핑(무신사,에이블리,지그재그,컬리,SSG,쿠팡,G마켓,옥션,11번가) 15% 할인 — 통합한도 근사치"
+        },
+        {
+          "categories": [
+            "dining"
+          ],
+          "type": "discount",
+          "rate": 0.1,
+          "cap": 4000,
+          "minCardSpend": 400000,
+          "condition": "월 2회. 전월실적 40만/80만원 구간별 여러 항목 통합한도 2만/4만원(개별 항목 한도 아님)",
+          "note": "요기요/배민 10% 할인 — 통합한도 근사치"
+        }
+      ],
+      "perks": {
+        "lounge": {
+          "visitsPerYear": 0,
+          "unlimited": false,
+          "note": null
+        },
+        "valet": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "airport": {
+          "visitsPerYear": 0,
+          "note": null
+        },
+        "membership": {
+          "has": false,
+          "note": null
+        },
+        "mileage": {
+          "has": false
+        }
+      },
+      "hasStructuredBenefits": true,
+      "researched": true
     }
   ]
 }
