@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-18T04:28:28+00:00",
+    "generatedAt": "2026-09-18T07:01:49+00:00",
     "sourceFile": "card_data.xlsx",
     "cardCount": 19,
     "taggedCardCount": 10
@@ -150,6 +150,7 @@
           ],
           "type": "mileage",
           "rate": 0.001,
+          "minCardSpend": 500000,
           "condition": "전월실적 50만원",
           "note": "국내 1마일/1,000원"
         },
@@ -159,6 +160,7 @@
           ],
           "type": "mileage",
           "rate": 0.003,
+          "minCardSpend": 500000,
           "condition": "전월실적 50만원",
           "note": "해외 3마일/1,000원"
         },
@@ -168,6 +170,7 @@
           ],
           "type": "mileage",
           "rate": 0.005,
+          "minCardSpend": 500000,
           "condition": "전월실적 50만원, 현대카드 직판(직영몰) 한정",
           "note": "직판 5마일/1,000원 (일반 온라인쇼핑과 다름, 참고용)"
         }
@@ -206,7 +209,8 @@
           ],
           "type": "accrual",
           "rate": 0.015,
-          "condition": "마일리지 또는 M포인트 중 택1",
+          "minCardSpend": 500000,
+          "condition": "마일리지 또는 M포인트 중 택1 (전월실적 50만원, 마일리지 옵션 기준으로 추정 적용)",
           "note": "공과금/학비/유가증권/보험/교통비 제외"
         }
       ],
@@ -242,6 +246,7 @@
           ],
           "type": "accrual",
           "rate": 0.001,
+          "minCardSpend": 500000,
           "condition": "전월실적 50만원",
           "note": "기본 적립"
         },
@@ -256,6 +261,7 @@
           ],
           "type": "accrual",
           "rate": 0.005,
+          "minCardSpend": 500000,
           "condition": "전월실적 50만원",
           "note": "해외/호텔/항공/골프/면세 우대적립"
         },
@@ -266,6 +272,7 @@
           "type": "fixedDiscount",
           "amount": 30000,
           "minSpend": 60000,
+          "minCardSpend": 500000,
           "condition": "전월실적 50만원",
           "note": "6만원 이상 결제 시 3만원 할인 (아웃백, 호텔 레스토랑 등)"
         }
@@ -304,6 +311,7 @@
           ],
           "type": "discount",
           "rate": 0.01,
+          "minCardSpend": 0,
           "condition": "무실적",
           "note": "국내 청구할인 (대출/세금/공과금/관리비/학교/보험/수수료/연체 등 제외)"
         },
@@ -313,6 +321,7 @@
           ],
           "type": "discount",
           "rate": 0.03,
+          "minCardSpend": 0,
           "condition": "무실적",
           "note": "해외 청구할인"
         },
@@ -324,6 +333,7 @@
           "type": "discount",
           "rate": 0.05,
           "cap": 50000,
+          "minCardSpend": 400000,
           "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)",
           "note": "백화점, 인터넷면세점 5%"
         },
@@ -334,6 +344,7 @@
           "type": "discount",
           "rate": 0.05,
           "cap": 50000,
+          "minCardSpend": 400000,
           "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)",
           "note": "골프연습장 등 스포츠 5%"
         },
@@ -345,6 +356,7 @@
           "type": "discount",
           "rate": 0.05,
           "cap": 50000,
+          "minCardSpend": 400000,
           "condition": "전월실적 40만/80만/150만원 구간, 한도 1만/3만/5만원 (청구할인과 중복 적용)",
           "note": "학원, 편의점, 커피전문점 5%"
         }
@@ -378,6 +390,7 @@
           "type": "discount",
           "rate": 0.05,
           "cap": 20000,
+          "minCardSpend": 300000,
           "condition": "전월실적 30만원",
           "note": "커피/제과/택시/화장품/영화 5% (제과·화장품 카테고리는 미분류)"
         },
@@ -388,7 +401,8 @@
           "type": "discount",
           "rate": 0.035,
           "cap": null,
-          "condition": "GS칼텍스 주유소, L당 60원 할인",
+          "minCardSpend": 300000,
+          "condition": "GS칼텍스 주유소, L당 60원 할인, 전월실적 30만원",
           "note": "리터당 정액 할인(60원/L)을 평균 유가 1,700원/L 가정 시 약 3.5%로 환산"
         },
         {
@@ -398,7 +412,8 @@
           "type": "discount",
           "rate": 0.15,
           "cap": 60000,
-          "condition": null,
+          "minCardSpend": 300000,
+          "condition": "전월실적 30만원",
           "note": "진에어(JinAir) 15% 할인"
         },
         {
@@ -407,6 +422,7 @@
           ],
           "type": "accrual",
           "rate": 0.007,
+          "minCardSpend": 0,
           "condition": null,
           "note": "마이신한포인트 0.7%"
         },
@@ -419,6 +435,7 @@
           ],
           "type": "accrual",
           "rate": 0.05,
+          "minCardSpend": 0,
           "condition": null,
           "note": "해외/아울렛/면세점/골프 5% 포인트 적립"
         }
@@ -448,6 +465,7 @@
           "type": "discount",
           "rate": 0.02,
           "cap": 300000,
+          "minCardSpend": 0,
           "condition": null,
           "note": "해외 온오프라인 2% 결제일할인"
         },
@@ -458,6 +476,7 @@
           "type": "discount",
           "rate": 0.5,
           "cap": 20000,
+          "minCardSpend": 500000,
           "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)",
           "note": "국내 인앱결제/디지털콘텐츠(구글,앱스,넷플,디즈니,유튜브,쿠팡,네이버페이) 50%"
         },
@@ -469,6 +488,7 @@
           "type": "feeDiscount",
           "rate": 0.012,
           "cap": null,
+          "minCardSpend": 0,
           "condition": "무실적",
           "note": "해외결제 수수료 1.2%(1+0.2%p) 결제일할인, 한도 없음"
         },
@@ -479,6 +499,7 @@
           "type": "discount",
           "rate": 0.05,
           "cap": 20000,
+          "minCardSpend": 500000,
           "condition": "전월실적 50만/100만원 구간 (한도 1만/2만원)",
           "note": "해외 오프라인 삼성페이 결제 5%"
         }
@@ -508,6 +529,7 @@
           "type": "discount",
           "rate": 0.035,
           "cap": null,
+          "minCardSpend": 0,
           "condition": "무실적, 한도 없음",
           "note": "해외 온오프라인 3.5%"
         },
@@ -518,6 +540,7 @@
           "type": "discount",
           "rate": 0.007,
           "cap": null,
+          "minCardSpend": 0,
           "condition": "무실적, 한도 없음",
           "note": "국내 온오프라인 0.7%"
         }
@@ -560,6 +583,7 @@
           "type": "discount",
           "rate": 0.1,
           "cap": 10000,
+          "minCardSpend": 300000,
           "condition": "전월실적 30만/50만/100만원 구간, 한도 3천/7천/1만원",
           "note": "전기/도시가스/통신사 10% 할인"
         },
@@ -572,6 +596,7 @@
           "type": "discount",
           "rate": 0.1,
           "cap": 10000,
+          "minCardSpend": 300000,
           "condition": "일1회, 월5회, 전월실적 구간별 승인한도 1만원",
           "note": "편의점/병원/약국/세탁소 10% 할인"
         },
@@ -584,6 +609,7 @@
           "type": "discount",
           "rate": 0.1,
           "cap": 10000,
+          "minCardSpend": 300000,
           "condition": "21시~09시, 일1회, 월10회, 전월실적 구간별 승인한도 1만원",
           "note": "온라인/택시/심야 식음료 10% 할인"
         },
@@ -594,6 +620,7 @@
           "type": "discount",
           "rate": 0.1,
           "cap": 50000,
+          "minCardSpend": 300000,
           "condition": "주말, 일1회, 전월실적 구간별 승인한도 5만원",
           "note": "대형마트 10% 할인"
         },
@@ -604,6 +631,7 @@
           "type": "discount",
           "rate": 0.1,
           "cap": 100000,
+          "minCardSpend": 300000,
           "condition": "주말, 일1회 승인한도 10만원/월승인한도 30만원, 전월실적 구간",
           "note": "주유소 10% 할인"
         }
@@ -704,6 +732,7 @@
           ],
           "type": "mileage",
           "rate": 0.0008,
+          "minCardSpend": 500000,
           "condition": "평일, 전월실적 50만원, 월 최대 3만 마일",
           "note": "평일 기본 0.8마일/1,000원"
         },
@@ -715,6 +744,7 @@
           ],
           "type": "mileage",
           "rate": 0.001,
+          "minCardSpend": 500000,
           "condition": "평일, 전월실적 50만원, 월 최대 3만 마일",
           "note": "평일 커피/편의점/자동납부(관리비,통신사,도시가스) 1마일/1,000원"
         },
@@ -724,6 +754,7 @@
           ],
           "type": "mileage",
           "rate": 0.001,
+          "minCardSpend": 500000,
           "condition": "주말, 전월실적 50만원, 월 최대 3만 마일",
           "note": "주말 기본 1마일/1,000원"
         },
@@ -735,6 +766,7 @@
           ],
           "type": "mileage",
           "rate": 0.002,
+          "minCardSpend": 500000,
           "condition": "주말, 전월실적 50만원, 월 최대 3만 마일",
           "note": "주말 골프장/호텔/면세점 2마일/1,000원"
         }
@@ -763,6 +795,7 @@
           "type": "discount",
           "rate": 0.02,
           "cap": null,
+          "minCardSpend": 0,
           "condition": "무실적, 해외 수수료 면제",
           "note": "해외 결제 2% 할인"
         }
