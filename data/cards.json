@@ -1,118 +1,199 @@
 {
   "meta": {
-    "generatedAt": "2026-09-18T10:22:20+00:00",
+    "generatedAt": "2026-09-18T10:58:43+00:00",
     "sourceFile": "card_data_v2.xlsx",
     "cardCount": 18,
     "taggedCardCount": 15
   },
   "spendCategories": [
     {
-      "id": "convenience",
-      "label": "편의점"
-    },
-    {
-      "id": "cafe",
-      "label": "카페/커피"
-    },
-    {
-      "id": "mart",
-      "label": "마트/백화점"
-    },
-    {
-      "id": "onlineShopping",
-      "label": "온라인쇼핑"
-    },
-    {
-      "id": "gas",
-      "label": "주유"
-    },
-    {
       "id": "transit",
-      "label": "대중교통"
+      "label": "대중교통",
+      "group": "교통"
     },
     {
       "id": "taxi",
-      "label": "택시"
+      "label": "택시",
+      "group": "교통"
     },
     {
-      "id": "telecom",
-      "label": "통신비"
+      "id": "gas",
+      "label": "주유",
+      "group": "교통"
     },
     {
-      "id": "utility",
-      "label": "공과금"
+      "id": "highpass",
+      "label": "하이패스",
+      "group": "교통"
     },
     {
-      "id": "medical",
-      "label": "병원/약국"
+      "id": "mobility",
+      "label": "모빌리티/렌터카",
+      "group": "교통"
+    },
+    {
+      "id": "onlineShopping",
+      "label": "온라인쇼핑",
+      "group": "쇼핑"
+    },
+    {
+      "id": "mart",
+      "label": "대형마트/백화점",
+      "group": "쇼핑"
+    },
+    {
+      "id": "convenience",
+      "label": "편의점",
+      "group": "쇼핑"
+    },
+    {
+      "id": "dutyFree",
+      "label": "면세점/아울렛",
+      "group": "쇼핑"
+    },
+    {
+      "id": "ottSubscription",
+      "label": "OTT 구독",
+      "group": "구독"
+    },
+    {
+      "id": "membershipSubscription",
+      "label": "멤버십 구독",
+      "group": "구독"
     },
     {
       "id": "dining",
-      "label": "레스토랑/외식"
+      "label": "음식점/외식",
+      "group": "푸드"
     },
     {
-      "id": "movie",
-      "label": "영화/문화"
+      "id": "cafe",
+      "label": "카페",
+      "group": "푸드"
     },
     {
-      "id": "ott",
-      "label": "OTT/구독"
+      "id": "deliveryApp",
+      "label": "배달앱",
+      "group": "푸드"
     },
     {
-      "id": "flight",
-      "label": "항공"
+      "id": "utility",
+      "label": "공과금/통신비",
+      "group": "생활"
     },
     {
-      "id": "hotel",
-      "label": "호텔/여행"
+      "id": "aptFee",
+      "label": "아파트 관리비",
+      "group": "생활"
     },
     {
-      "id": "golf",
-      "label": "골프"
+      "id": "health",
+      "label": "건강(병원/약국)",
+      "group": "생활"
     },
     {
-      "id": "dutyfree",
-      "label": "면세점/아울렛"
+      "id": "beauty",
+      "label": "뷰티",
+      "group": "생활"
     },
     {
       "id": "laundry",
-      "label": "세탁소"
+      "label": "세탁소",
+      "group": "생활"
+    },
+    {
+      "id": "education",
+      "label": "교육",
+      "group": "교육/육아"
+    },
+    {
+      "id": "childcare",
+      "label": "육아",
+      "group": "교육/육아"
+    },
+    {
+      "id": "culture",
+      "label": "문화",
+      "group": "문화/여가"
+    },
+    {
+      "id": "leisure",
+      "label": "여가",
+      "group": "문화/여가"
+    },
+    {
+      "id": "golf",
+      "label": "골프",
+      "group": "문화/여가"
+    },
+    {
+      "id": "pet",
+      "label": "반려동물",
+      "group": "문화/여가"
+    },
+    {
+      "id": "flight",
+      "label": "항공권",
+      "group": "여행"
+    },
+    {
+      "id": "lodging",
+      "label": "숙박/호텔",
+      "group": "여행"
     },
     {
       "id": "overseasOffline",
-      "label": "해외 오프라인"
+      "label": "해외 오프라인",
+      "group": "여행"
     },
     {
       "id": "overseasOnline",
-      "label": "해외 온라인"
+      "label": "해외 온라인",
+      "group": "여행"
+    },
+    {
+      "id": "simplePay",
+      "label": "간편결제",
+      "group": "결제수단"
     },
     {
       "id": "etc",
-      "label": "기타"
+      "label": "기타",
+      "group": "기타"
     }
   ],
   "metaCategories": {
     "domesticAll": {
       "label": "국내 전체",
       "includes": [
-        "convenience",
-        "cafe",
-        "mart",
-        "onlineShopping",
-        "gas",
         "transit",
         "taxi",
-        "telecom",
-        "utility",
-        "medical",
+        "gas",
+        "highpass",
+        "mobility",
+        "onlineShopping",
+        "mart",
+        "convenience",
+        "dutyFree",
+        "ottSubscription",
+        "membershipSubscription",
         "dining",
-        "movie",
-        "ott",
-        "flight",
-        "hotel",
-        "golf",
-        "dutyfree",
+        "cafe",
+        "deliveryApp",
+        "utility",
+        "aptFee",
+        "health",
+        "beauty",
         "laundry",
+        "education",
+        "childcare",
+        "culture",
+        "leisure",
+        "golf",
+        "pet",
+        "flight",
+        "lodging",
+        "simplePay",
         "etc"
       ]
     },
@@ -121,6 +202,73 @@
       "includes": [
         "overseasOffline",
         "overseasOnline"
+      ]
+    },
+    "transitAll": {
+      "label": "교통 전체",
+      "includes": [
+        "transit",
+        "taxi",
+        "gas",
+        "highpass",
+        "mobility"
+      ]
+    },
+    "shoppingAll": {
+      "label": "쇼핑 전체",
+      "includes": [
+        "onlineShopping",
+        "mart",
+        "convenience",
+        "dutyFree"
+      ]
+    },
+    "subscriptionAll": {
+      "label": "구독 전체",
+      "includes": [
+        "ottSubscription",
+        "membershipSubscription"
+      ]
+    },
+    "foodAll": {
+      "label": "푸드 전체",
+      "includes": [
+        "dining",
+        "cafe",
+        "deliveryApp"
+      ]
+    },
+    "livingAll": {
+      "label": "생활 전체",
+      "includes": [
+        "utility",
+        "aptFee",
+        "health",
+        "beauty",
+        "laundry"
+      ]
+    },
+    "eduChildAll": {
+      "label": "교육/육아 전체",
+      "includes": [
+        "education",
+        "childcare"
+      ]
+    },
+    "cultureLeisureAll": {
+      "label": "문화/여가 전체",
+      "includes": [
+        "culture",
+        "leisure",
+        "golf",
+        "pet"
+      ]
+    },
+    "travelAll": {
+      "label": "여행(항공/숙박) 전체",
+      "includes": [
+        "flight",
+        "lodging"
       ]
     }
   },
@@ -226,7 +374,6 @@
           ],
           "excludeCategories": [
             "utility",
-            "telecom",
             "transit",
             "taxi"
           ],
@@ -299,10 +446,10 @@
           "categories": [
             "overseasOffline",
             "overseasOnline",
-            "hotel",
+            "lodging",
             "flight",
             "golf",
-            "dutyfree"
+            "dutyFree"
           ],
           "type": "accrual",
           "rate": 0.005,
@@ -373,7 +520,6 @@
           ],
           "excludeCategories": [
             "utility",
-            "telecom",
             "transit",
             "taxi"
           ],
@@ -396,7 +542,7 @@
         {
           "categories": [
             "mart",
-            "dutyfree"
+            "dutyFree"
           ],
           "type": "discount",
           "rate": 0.05,
@@ -475,7 +621,7 @@
           "categories": [
             "cafe",
             "taxi",
-            "movie"
+            "culture"
           ],
           "type": "discount",
           "rate": 0.05,
@@ -520,7 +666,7 @@
           "categories": [
             "overseasOffline",
             "overseasOnline",
-            "dutyfree",
+            "dutyFree",
             "golf"
           ],
           "type": "accrual",
@@ -572,7 +718,7 @@
       "benefits": [
         {
           "categories": [
-            "ott"
+            "ottSubscription"
           ],
           "type": "discount",
           "rate": 0.5,
@@ -585,7 +731,7 @@
           "categories": [
             "onlineShopping",
             "flight",
-            "hotel",
+            "lodging",
             "mart",
             "convenience",
             "cafe",
@@ -603,10 +749,10 @@
             "domesticAll"
           ],
           "excludeCategories": [
-            "ott",
+            "ottSubscription",
             "onlineShopping",
             "flight",
-            "hotel",
+            "lodging",
             "mart",
             "convenience",
             "cafe",
@@ -763,8 +909,7 @@
             "domesticAll"
           ],
           "excludeCategories": [
-            "utility",
-            "telecom"
+            "utility"
           ],
           "type": "discount",
           "rate": 0.007,
@@ -789,7 +934,7 @@
         },
         {
           "categories": [
-            "ott"
+            "ottSubscription"
           ],
           "type": "discount",
           "rate": 0.5,
@@ -851,8 +996,7 @@
       "benefits": [
         {
           "categories": [
-            "utility",
-            "telecom"
+            "utility"
           ],
           "type": "discount",
           "rate": 0.1,
@@ -864,7 +1008,7 @@
         {
           "categories": [
             "convenience",
-            "medical",
+            "health",
             "laundry"
           ],
           "type": "discount",
@@ -1130,8 +1274,8 @@
         {
           "categories": [
             "golf",
-            "hotel",
-            "dutyfree"
+            "lodging",
+            "dutyFree"
           ],
           "type": "mileage",
           "rate": 0.002,
@@ -1285,7 +1429,7 @@
         },
         {
           "categories": [
-            "ott"
+            "ottSubscription"
           ],
           "type": "discount",
           "rate": 0.3,
@@ -1369,7 +1513,7 @@
         },
         {
           "categories": [
-            "ott"
+            "ottSubscription"
           ],
           "type": "discount",
           "rate": 0.3,
