@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-data/cards_raw.json (xlsx 원문) + data/benefit_tags.json (수작업 구조화 오버레이)
-  -> data/cards.json (최종 데이터, 카드 이름으로 매칭해서 병합)
-  -> index.html 안에 <script id="card-data" type="application/json"> 블록을 최신 데이터로 교체
+data/benefit_tags.json (categories/rewardPrograms/cards, 이미 raw+혜택 병합됨)
+  -> data/cards.json (id 슬러그 붙인 배열 형태, meta 포함)
+  -> index.html 안의 <script id="card-data" type="application/json"> 블록 교체
 
 사용법:
     python3 scripts/build.py
-    (먼저 scripts/xlsx_to_raw.py로 새 xlsx를 data/cards_raw.json 으로 변환해둘 것)
+    (먼저 scripts/import_from_mapping.py로 data/benefit_tags.json을 최신화해둘 것)
 """
 import json
 import re
@@ -14,12 +14,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-RAW_PATH = ROOT / "data" / "cards_raw.json"
 TAGS_PATH = ROOT / "data" / "benefit_tags.json"
 OUT_PATH = ROOT / "data" / "cards.json"
 HTML_PATH = ROOT / "index.html"
-
-TOP_LEVEL_FIELDS = {"카드사", "연회비", "가족카드"}
 
 
 def slugify(name, seen):
@@ -34,39 +31,25 @@ def slugify(name, seen):
     return slug
 
 
-def to_number_or_none(v):
-    if isinstance(v, (int, float)):
-        return v
-    return None  # "x" 등 텍스트는 숫자화하지 않음 (원문은 raw에 보존)
-
-
 def build():
-    raw = json.loads(RAW_PATH.read_text(encoding="utf-8"))
     tags = json.loads(TAGS_PATH.read_text(encoding="utf-8"))
-    tag_cards = tags.get("cards", {})
 
     seen_slugs = set()
     cards_out = []
-    for c in raw["cards"]:
-        name = c["name"]
-        fields = c.get("fields", {})
-        raw_fields = {k: v for k, v in fields.items() if k not in TOP_LEVEL_FIELDS}
-        tag_entry = tag_cards.get(name)
-        benefits = tag_entry["benefits"] if tag_entry else []
-        perks = tag_entry.get("perks") if tag_entry else None
-
+    for name, c in tags["cards"].items():
+        benefits = c.get("benefits", [])
+        raw_fields = c.get("raw", {})
         cards_out.append({
             "id": slugify(name, seen_slugs),
             "name": name,
-            "issuer": fields.get("카드사"),
+            "issuer": c.get("issuer"),
             "group": c.get("group"),
-            "annualFee": to_number_or_none(fields.get("연회비")),
-            "annualFeeRaw": fields.get("연회비"),
-            "familyCardFee": to_number_or_none(fields.get("가족카드")),
-            "familyCardFeeRaw": fields.get("가족카드"),
+            "annualFee": c.get("annualFee"),
+            "annualFeeRaw": c.get("annualFeeRaw"),
+            "familyCardFee": c.get("familyCardFee"),
+            "familyCardFeeRaw": c.get("familyCardFeeRaw"),
             "raw": raw_fields,
             "benefits": benefits,
-            "perks": perks,
             "hasStructuredBenefits": bool(benefits),
             "researched": bool(raw_fields) or bool(benefits),
         })
@@ -74,12 +57,12 @@ def build():
     final = {
         "meta": {
             "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "sourceFile": raw.get("sourceFile"),
+            "sourceFile": "benefit_tags.json",
             "cardCount": len(cards_out),
             "taggedCardCount": sum(1 for c in cards_out if c["hasStructuredBenefits"]),
         },
-        "spendCategories": tags["spendCategories"],
-        "metaCategories": tags["metaCategories"],
+        "categories": tags["categories"],
+        "rewardPrograms": tags["rewardPrograms"],
         "cards": cards_out,
     }
 
@@ -93,7 +76,9 @@ def inject_into_html(data):
         print("index.html이 아직 없어서 데이터 주입은 건너뜁니다.")
         return
     html = HTML_PATH.read_text(encoding="utf-8")
-    payload = json.dumps(data, ensure_ascii=False)
+    # </script>가 JSON 문자열 값 안에 등장해도 HTML 파서가 스크립트 블록을 조기 종료하지
+    # 않도록 이스케이프한다 ("\/"는 JSON 표준 이스케이프라 JSON.parse가 그대로 복원함).
+    payload = json.dumps(data, ensure_ascii=False).replace("</script", "<\\/script")
     pattern = re.compile(
         r'(<script id="card-data" type="application/json">)(.*?)(</script>)',
         re.DOTALL,

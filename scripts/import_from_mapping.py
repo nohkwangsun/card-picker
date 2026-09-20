@@ -205,6 +205,17 @@ def parse_cap(limit_text):
     return cap, is_shared
 
 
+def parse_monthly_count_cap(condition_text, per_unit_amount):
+    """'일1회·월10회'처럼 건당 정액 혜택(perTxCashback)의 월 최대 횟수만 조건에
+    적혀있고 한도(원) 컬럼이 비어있는 경우, 월 횟수 x 건당 금액으로 월 한도를 근사."""
+    if not condition_text or per_unit_amount is None:
+        return None
+    m = re.search(r"월\s*(\d+)\s*회", str(condition_text))
+    if not m:
+        return None
+    return int(per_unit_amount) * int(m.group(1))
+
+
 def load_categories(wb):
     ws = wb["카테고리"]
     categories = []
@@ -287,6 +298,12 @@ def load_benefit_rows(wb):
         rate, amount, parse_fail_note = parse_rate_or_amount(rtype, value_text or note)
         min_card_spend = parse_min_card_spend(condition)
         cap, cap_shared = parse_cap(limit_text)
+        if cap is None and rtype == "perTxCashback":
+            # 건당 정액 캐시백인데 한도(원)는 안 적혀있고 조건에 '월N회'만 있는 경우,
+            # 월 횟수 x 건당 금액으로 월 한도를 근사한다.
+            derived_cap = parse_monthly_count_cap(condition, amount)
+            if derived_cap is not None:
+                cap = derived_cap
 
         benefit = {
             "code": code,
@@ -340,7 +357,29 @@ def load_benefit_rows(wb):
                 benefit["approxNote"] = parse_fail_note
 
         by_card.setdefault(name, []).append(benefit)
+
+    _auto_share_duplicate_caps(by_card)
     return by_card
+
+
+def _auto_share_duplicate_caps(by_card):
+    """같은 카드 안에서 note/조건/한도가 완전히 동일한 혜택 행이 여러 카테고리 코드에
+    걸쳐 반복되면(엑셀에서 한 문장을 카테고리별로 쪼개 여러 행으로 매핑한 경우),
+    사실은 하나의 한도를 여러 카테고리가 나눠 쓰는 것이므로 capGroup을 자동으로
+    공유시킨다 (limitRaw에 '통합'이라고 명시되지 않았어도 적용)."""
+    for name, benefits in by_card.items():
+        buckets = {}
+        for b in benefits:
+            if b.get("cap") is None or b.get("capGroup"):
+                continue
+            key = (b["type"], b.get("note"), b.get("conditionRaw"), b.get("limitRaw"))
+            buckets.setdefault(key, []).append(b)
+        for key, group in buckets.items():
+            if len(group) < 2:
+                continue
+            cap_group = f"{name}::{key[1]}::{key[3]}"
+            for b in group:
+                b["capGroup"] = cap_group
 
 
 def merge_raw(card_compare_path, benefits_by_card):
