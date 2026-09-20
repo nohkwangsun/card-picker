@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-20T13:14:44+00:00",
+    "generatedAt": "2026-09-20T13:22:37+00:00",
     "sourceFile": "benefit_tags.json",
     "cardCount": 22,
     "taggedCardCount": 22
@@ -3793,8 +3793,8 @@
       "researched": true
     },
     {
-      "id": "마일리지-플래티넘-스카이패스-sfc",
-      "name": "마일리지 플래티넘 스카이패스 (SFC)",
+      "id": "삼성카드-마일리지-플래티넘-스카이패스-sfc",
+      "name": "삼성카드 & 마일리지 플래티넘 스카이패스 (SFC)",
       "issuer": "삼성",
       "group": null,
       "annualFee": 49000.0,
@@ -3816,7 +3816,7 @@
           "minCardSpend": 0,
           "rate": 0.001,
           "cap": 2000,
-          "capGroup": "마일리지 플래티넘 스카이패스 (SFC)::1Mi/1,000원::2,000 Mi"
+          "capGroup": "삼성카드 & 마일리지 플래티넘 스카이패스 (SFC)::1Mi/1,000원::2,000 Mi"
         },
         {
           "code": "02",
@@ -3827,7 +3827,7 @@
           "minCardSpend": 0,
           "rate": 0.001,
           "cap": 2000,
-          "capGroup": "마일리지 플래티넘 스카이패스 (SFC)::1Mi/1,000원::2,000 Mi"
+          "capGroup": "삼성카드 & 마일리지 플래티넘 스카이패스 (SFC)::1Mi/1,000원::2,000 Mi"
         },
         {
           "code": "36-03",

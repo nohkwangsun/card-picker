@@ -29,10 +29,8 @@ from xlsx_to_raw import extract as extract_raw  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 OUT_PATH = ROOT / "data" / "benefit_tags.json"
 
-# 사용자가 확인해준 카드명 오타 수정
-NAME_FIXES = {
-    "삼성카드 & 마일리지 플래티넘 스카이패스 (SFC)": "마일리지 플래티넘 스카이패스 (SFC)",
-}
+# 카드명 수동 보정 (현재는 없음 — 카드비교/혜택매핑 두 시트의 카드명이 그대로 일치함)
+NAME_FIXES = {}
 
 TYPE_MAP = {
     "청구할인": "discount", "결제일할인": "discount", "할인": "discount",
