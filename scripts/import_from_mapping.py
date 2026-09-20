@@ -59,12 +59,31 @@ REWARD_PROGRAM_BY_NOTE = {
 
 def parse_num_won(text):
     """'150,000원' / '30,000 Mi' / '1.5만/2만원' 등에서 숫자(원 단위)를 뽑는다.
-    여러 숫자가 있으면(예: 구간별) 가장 작은 값을 우선(보수적) 반환."""
+    여러 숫자가 있으면(예: 구간별) 가장 작은 값을 우선(보수적) 반환.
+    'N원 ×M' 형태(정액 혜택을 연 M회 제공)는 N*M(연간 총액)로 계산한다."""
     if not text:
         return None
     text = str(text)
+    m = re.search(r"([\d,.]+)\s*(만|천|억)?\s*원?\s*[×xX*]\s*(\d+)", text)
+    if m:
+        digits = m.group(1).replace(",", "")
+        try:
+            v = float(digits)
+        except ValueError:
+            v = None
+        if v is not None:
+            unit = m.group(2)
+            if unit == "만":
+                v *= 10000
+            elif unit == "천":
+                v *= 1000
+            elif unit == "억":
+                v *= 100000000
+            return v * int(m.group(3))
+    # '×2', 'x2'처럼 배수/횟수를 나타내는 숫자는 그 자체로 금액 후보가 아니므로 스캔에서 제외
+    text_wo_multiplier = re.sub(r"[×xX*]\s*\d+", "", text)
     nums = []
-    for m in re.finditer(r"([\d,.]+)\s*(만|천|억)?", text):
+    for m in re.finditer(r"([\d,.]+)\s*(만|천|억)?", text_wo_multiplier):
         digits = m.group(1).replace(",", "")
         if not digits or digits == ".":
             continue
@@ -263,7 +282,9 @@ def load_benefit_rows(wb):
         select_group = ws.cell(row=r, column=11).value
 
         rtype = TYPE_MAP.get(raw_type, "discount")
-        rate, amount, parse_fail_note = parse_rate_or_amount(rtype, value_text)
+        # 혜택률/금액 컬럼이 비어있으면(예: '택1' 항목의 금액이 note에만 서술된 경우)
+        # note 텍스트에서라도 숫자를 뽑아본다 (여러 옵션 중 최솟값 = 보수적 근사).
+        rate, amount, parse_fail_note = parse_rate_or_amount(rtype, value_text or note)
         min_card_spend = parse_min_card_spend(condition)
         cap, cap_shared = parse_cap(limit_text)
 
@@ -301,7 +322,11 @@ def load_benefit_rows(wb):
                 freeuse_parsed = True
 
         if parse_fail_note:
-            if rtype == "freeUse":
+            if rtype == "serviceOnly":
+                # serviceOnly(카드 브랜드/네트워크 자체 서비스 등)는 원래 금액/횟수로
+                # 환산되지 않는 서술형 정보이므로 파싱 실패로 취급하지 않는다
+                pass
+            elif rtype == "freeUse":
                 # freeUse는 금전 rate/amount가 원래 없는 유형 -> visitsPerYear/unlimited로
                 # 이용 횟수가 잡혔으면 정상 처리된 것이지 파싱 실패가 아님
                 if not freeuse_parsed:

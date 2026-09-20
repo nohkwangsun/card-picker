@@ -2290,7 +2290,7 @@
           "conditionRaw": null,
           "limitRaw": null,
           "minCardSpend": 0,
-          "amount": 4.0
+          "amount": 200000.0
         },
         {
           "code": "01",
@@ -2335,7 +2335,8 @@
           "note": "공항·호텔 발레파킹",
           "conditionRaw": "전월 50만",
           "limitRaw": null,
-          "minCardSpend": 500000
+          "minCardSpend": 500000,
+          "unparsedValue": "공항·호텔 발레파킹"
         },
         {
           "code": "33-02",
@@ -2343,7 +2344,8 @@
           "note": "공항·호텔 발레파킹",
           "conditionRaw": "전월 50만",
           "limitRaw": null,
-          "minCardSpend": 500000
+          "minCardSpend": 500000,
+          "unparsedValue": "공항·호텔 발레파킹"
         },
         {
           "code": "36-01",
@@ -2615,7 +2617,8 @@
           "note": "Centurion Lounge, Delta Sky Club",
           "conditionRaw": null,
           "limitRaw": null,
-          "minCardSpend": 0
+          "minCardSpend": 0,
+          "unparsedValue": "Centurion Lounge, Delta Sky Club"
         },
         {
           "code": "16-06",
@@ -2837,6 +2840,7 @@
           "conditionRaw": "연간이용 첫해 20만 / 차년도 300만",
           "limitRaw": null,
           "minCardSpend": 0,
+          "amount": 70000.0,
           "selectGroup": "택1"
         },
         {
@@ -3876,6 +3880,7 @@
           "conditionRaw": null,
           "limitRaw": null,
           "minCardSpend": 0,
+          "amount": 220000.0,
           "selectGroup": "택1"
         },
         {
