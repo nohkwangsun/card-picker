@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-20T13:22:37+00:00",
+    "generatedAt": "2026-09-20T13:59:53+00:00",
     "sourceFile": "benefit_tags.json",
     "cardCount": 22,
     "taggedCardCount": 22
@@ -2221,13 +2221,13 @@
     {
       "id": "대한항공_스카이패스",
       "label": "대한항공 스카이패스",
-      "defaultRate": 20,
+      "defaultRate": 15,
       "unit": "원/마일"
     },
     {
       "id": "아시아나클럽",
       "label": "아시아나클럽",
-      "defaultRate": 20,
+      "defaultRate": 15,
       "unit": "원/마일"
     },
     {
@@ -2239,7 +2239,7 @@
     {
       "id": "Membership_Rewards_MR",
       "label": "Membership Rewards(MR)",
-      "defaultRate": 20,
+      "defaultRate": 10,
       "unit": "원/마일"
     },
     {

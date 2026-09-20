@@ -242,6 +242,17 @@ def load_categories(wb):
     return categories
 
 
+# 2026-09 기준 웹 검색으로 조사한 적립처별 통용 환산가치(원). 항공 마일리지는 사용처에
+# 따라 실제로는 8~75원까지도 벌어지지만(국내선 vs 장거리 비즈니스석 등), 기본값으로는
+# 여러 출처가 공통으로 언급하는 "기본 통용 가치"를 쓴다. 포인트형(마이신한포인트/
+# KB포인트리/네이버페이 포인트/현대 M포인트)은 가맹점에서 1점=1원으로 쓸 수 있어 1원이
+# 정확한 값(현금 전환시에만 할인되는 경우가 있으나, 기본값은 정상 사용 기준으로 둔다).
+REWARD_RATE_OVERRIDES_BY_LABEL = {
+    "대한항공 스카이패스": 15,   # 기본 통용 가치 약 15원/마일 (노선/좌석별 8~75원까지 편차)
+    "아시아나클럽": 15,          # 업계 통념 15~20원/마일 구간의 하한
+    "Membership Rewards(MR)": 10,  # 1MR ≈ 10원 (항공 마일리지 전환시 포인트당 0.5~1마일)
+}
+
 def load_reward_programs(wb):
     ws = wb["혜택유형·조건"]
     programs = []
@@ -256,10 +267,11 @@ def load_reward_programs(wb):
             continue
         seen.add(pid)
         is_point = "포인트" in val
+        default_rate = REWARD_RATE_OVERRIDES_BY_LABEL.get(val, 1 if is_point else 20)
         programs.append({
             "id": pid,
             "label": val,
-            "defaultRate": 1 if is_point else 20,
+            "defaultRate": default_rate,
             "unit": "원/포인트" if is_point else "원/마일",
         })
     return programs
