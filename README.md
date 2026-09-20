@@ -28,15 +28,31 @@ index.html            혜택 계산기 앱 (데이터가 내장된 단일 파일
   환산가치 설정, ② 우선순위(선택), ③ 카드 1장 랭킹, ④ 카드 조합 추천. ①③은 기본으로
   펼쳐져 있고 ②④는 접혀 있습니다 (우선순위를 추가하면 ②는 자동으로 펼쳐집니다).
 - **카드 상세**: 카드 하나를 골라 구조화된 혜택 + 엑셀 원문을 봅니다.
-- **⚙ (우측 상단)**: cards.json 내보내기, 브라우저 저장 데이터(소비 입력값/우선순위/환산가치
-  설정) 초기화. 카드 데이터 자체를 여기서 편집하는 기능은 없습니다 — 아래 "데이터 갱신
-  방법" 참고.
+- **⚙ (우측 상단)**: **JSON 직접 편집**(카드/혜택 데이터를 텍스트로 직접 고치고 적용/다운로드),
+  브라우저 저장 데이터(소비 입력값/우선순위/환산가치 설정 + JSON 편집 내용) 초기화.
 
 ## 데이터 갱신 방법
 
-카테고리 체계와 혜택이 카드사 약관 문장 단위로 세밀하게 매핑되어 있어서(카테고리
-221개 · 혜택 매핑 282개 항목), 브라우저에서 직접 태그를 편집하는 기능은 없습니다.
-대신 원본 xlsx 두 개를 갱신한 뒤 스크립트를 다시 돌립니다.
+카테고리 221개 · 혜택 282개 항목 정도로 데이터가 많아진 뒤로는, xlsx를 통째로 갱신하기보다
+**⚙ 탭의 "JSON 직접 편집"에서 필요한 카드/혜택만 바로 고치는 게 기본 방법**입니다.
+
+1. ⚙ 탭을 열면 현재 데이터(categories/rewardPrograms/cards)가 JSON 텍스트로 표시됩니다.
+2. 필요한 부분만 고친 뒤 "적용"을 누르면 이 페이지에 바로 반영됩니다 (이 브라우저의
+   localStorage에 저장되어 새로고침해도 유지되지만, 다른 기기·브라우저에는 남지 않습니다).
+   JSON이 잘못되면 어느 줄 근처가 문제인지 메시지로 알려줍니다.
+3. "다운로드"로 받은 `cards.json`을 저장소의 `data/cards.json`으로 교체하고 커밋하면
+   영구 반영됩니다 (index.html에는 `scripts/build.py`로 다시 주입해야 실제 배포에 반영됨 —
+   `build.py`가 `data/benefit_tags.json`을 읽어 주입하므로, `cards.json`만 손으로 고쳤다면
+   `data/benefit_tags.json`도 같은 내용으로 맞춰주거나 build.py 없이 index.html의
+   `<script id="card-data">` 블록을 직접 교체해야 합니다).
+
+각 카드 항목의 형식은 `data/cards.json`을 참고하세요 (`id`/`name`/`issuer`/`group`/`annualFee`/
+`familyCardFee`/`raw`/`benefits[]`). `benefits[]`의 각 항목은 `code`(카테고리 코드)·`type`·
+`rate`또는`amount`·`cap`·`capGroup`·`selectGroup`·`minCardSpend`·`rewardProgram` 등을 가지며,
+자세한 의미는 아래 "카테고리 체계"와 "혜택 매칭 방식" 절을 참고하세요.
+
+카테고리 체계 자체를 바꾸거나 카드가 한꺼번에 많이 추가/변경될 때는 원본 xlsx 파이프라인을
+다시 씁니다.
 
 1. **카테고리·혜택매핑 xlsx** (안내/카테고리/혜택매핑/혜택유형·조건/변경내역 5개 시트) —
    카테고리 코드 체계와 카드별 혜택 문장이 카테고리 코드 단위로 쪼개져 있는 원본.
@@ -48,6 +64,9 @@ index.html            혜택 계산기 앱 (데이터가 내장된 단일 파일
 python3 scripts/import_from_mapping.py 카테고리매핑.xlsx 카드비교.xlsx   # data/benefit_tags.json 갱신
 python3 scripts/build.py                                                 # data/cards.json 재생성 + index.html에 주입
 ```
+
+이 파이프라인을 다시 돌리면 `data/benefit_tags.json`이 통째로 덮어써지므로, JSON 직접
+편집으로 먼저 손댄 내용이 있다면 xlsx 쪽에도 같이 반영해두지 않으면 덮어써져 사라집니다.
 
 `scripts/xlsx_to_raw.py 카드비교.xlsx`는 참고용으로 `data/cards_raw.json`(기계적 원문
 추출본)을 별도로 갱신할 때 씁니다. 계산기 자체는 `data/cards_raw.json`을 읽지 않습니다.
