@@ -59,6 +59,10 @@ button.btn{background:var(--accent);color:#fff;border:none;border-radius:8px;pad
 button.btn.secondary{background:var(--panel);color:var(--text);border:1px solid var(--border);}
 button.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
 button.btn:disabled{opacity:.4;cursor:not-allowed;}
+.segmented{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.segmented button{border:none;border-left:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 14px;font-size:13px;cursor:pointer;}
+.segmented button:first-child{border-left:none;}
+.segmented button.active{background:var(--accent);color:#fff;}
 table{width:100%;border-collapse:collapse;font-size:13px;}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
 th{color:var(--muted);font-weight:600;font-size:12px;white-space:nowrap;}
@@ -129,9 +133,9 @@ tr.clickable:hover{background:var(--accent-weak);}
         <div class="field"><label>&nbsp;</label><label style="display:flex;align-items:center;gap:5px;font-size:12.5px;"><input type="checkbox" id="fTaggedOnly" style="width:auto;">구조화된 카드만</label></div>
         <div class="field" style="margin-left:auto;">
           <label>&nbsp;</label>
-          <div class="row" style="gap:0;">
-            <button class="btn secondary" id="viewTableBtn" style="border-radius:8px 0 0 8px;">테이블</button>
-            <button class="btn ghost" id="viewExpandBtn" style="border-radius:0 8px 8px 0;margin-left:-1px;">전체 펼쳐보기</button>
+          <div class="segmented">
+            <button id="viewTableBtn" class="active">테이블</button>
+            <button id="viewExpandBtn">전체 펼쳐보기</button>
           </div>
         </div>
       </div>
@@ -464,11 +468,11 @@ function setCompareView(mode){
   var expandBtn = document.getElementById('viewExpandBtn');
   if(mode==='expand'){
     tableEl.style.display='none'; expandEl.style.display='block';
-    tableBtn.className='btn ghost'; expandBtn.className='btn secondary';
+    tableBtn.classList.remove('active'); expandBtn.classList.add('active');
     renderCompareExpanded();
   } else {
     tableEl.style.display='table'; expandEl.style.display='none';
-    tableBtn.className='btn secondary'; expandBtn.className='btn ghost';
+    tableBtn.classList.add('active'); expandBtn.classList.remove('active');
   }
   try{ localStorage.setItem('card-picker-compare-view', mode); }catch(e){}
 }
