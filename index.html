@@ -150,8 +150,11 @@ tr.clickable:hover{background:var(--accent-weak);}
     <details class="panel" open>
       <summary>1. 월 소비 입력 <span class="sum-hint" id="spendSummaryHint">쓰는 카테고리만 추가하세요</span></summary>
       <div class="details-body">
+        <div class="small muted" style="margin-bottom:6px;">자주 쓰는 카테고리는 클릭 한 번으로 추가:</div>
+        <div id="quickAddChips" style="margin-bottom:12px;"></div>
         <div id="spendInputs" style="margin-bottom:8px;"></div>
         <button class="btn secondary" id="addCategoryBtn">+ 카테고리 추가</button>
+        <datalist id="categoryDatalist"></datalist>
         <div class="row" style="margin-top:14px;">
           <div class="field"><label>&nbsp;</label><button class="btn" id="calcBtn">계산하기</button></div>
           <div class="field"><label>&nbsp;</label><button class="btn secondary" id="resetSpendBtn">금액 초기화</button></div>
@@ -252,6 +255,7 @@ function loadState(){
   state.categories.forEach(function(c){ categoryByCode[c.code] = c; });
   rewardProgramById = {};
   state.rewardPrograms.forEach(function(p){ rewardProgramById[p.id] = p; });
+  buildPathToCodeMap();
 }
 function saveState(){
   try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){ /* 무시 */ }
@@ -316,21 +320,53 @@ function catPath(code){
   var c = categoryByCode[code];
   return c ? c.path : code;
 }
-function buildCategorySelectOptions(){
-  var groups = [], order = [];
-  state.categories.slice().sort(function(a,b){ return a.code<b.code?-1:a.code>b.code?1:0; }).forEach(function(c){
-    if(c.kind!=='사용처' && c.kind!=='결제수단') return;
-    var groupName = c.group || '기타';
-    var grp = groups[groupName];
-    if(!grp){ grp = groups[groupName] = []; order.push(groupName); }
-    grp.push(c);
+/* ---------- 카테고리 검색 입력 (datalist 콤보박스) ----------
+   카테고리가 200개가 넘어 <select> 하나로는 계속 스크롤해야 해서, 타이핑하면 걸러지는
+   입력창으로 바꾼다. 표시/매칭 텍스트는 catPath()(예: "여행 > 항공권 > 대한항공")를
+   쓰고, 이걸 다시 코드로 역매핑한다(경로는 코드 체계상 항상 고유함). */
+var pathToCode = {};
+var labelToCode = {}; // 짧은 이름(예: "진에어")만 입력해도 되도록 하는 보조 매핑. 라벨이 겹치는 카테고리가
+                       // 있으면(현재는 없음) 모호해지므로 그 라벨은 매핑에서 빼서 전체 경로 입력을 요구한다.
+function selectableCategories(){
+  return state.categories.filter(function(c){ return c.kind==='사용처' || c.kind==='결제수단'; });
+}
+function buildPathToCodeMap(){
+  pathToCode = {};
+  labelToCode = {};
+  var labelSeen = {};
+  selectableCategories().forEach(function(c){
+    pathToCode[catPath(c.code)] = c.code;
+    if(labelSeen[c.label]){ delete labelToCode[c.label]; }
+    else{ labelSeen[c.label]=true; labelToCode[c.label] = c.code; }
   });
-  return order.map(function(g){
-    return el('optgroup', {label:g}, groups[g].map(function(c){
-      var depth = c.level || 1;
-      var indent = depth>1 ? Array(depth).join('  ') + '↳ ' : '';
-      return el('option', {value:c.code, text: indent + c.label});
-    }));
+}
+function codeForCategoryInputText(text){
+  return pathToCode[text] || labelToCode[text] || null;
+}
+function populateCategoryDatalist(){
+  var dl = document.getElementById('categoryDatalist');
+  if(!dl) return;
+  dl.innerHTML = '';
+  selectableCategories().slice().sort(function(a,b){ return a.code<b.code?-1:a.code>b.code?1:0; })
+    .forEach(function(c){ dl.appendChild(el('option', {value: catPath(c.code)})); });
+}
+var QUICK_ADD_CODES = ['01','02-01','02-02','03','05','09','11','13','14','16-01','16-04','17-01','19','20-01','21','30','37'];
+function renderQuickAddChips(){
+  var wrap = document.getElementById('quickAddChips');
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  wrap.style.display = 'flex';
+  wrap.style.flexWrap = 'wrap';
+  wrap.style.gap = '6px';
+  QUICK_ADD_CODES.forEach(function(code){
+    if(!categoryByCode[code]) return;
+    var chip = el('span', {class:'chip', text: catLabel(code), onclick:function(){
+      captureAndSaveSpend();
+      if(activeSpendCatIds.indexOf(code)===-1) activeSpendCatIds.push(code);
+      saveActiveCategories();
+      renderSpendInputs();
+    }});
+    wrap.appendChild(chip);
   });
 }
 
@@ -695,17 +731,26 @@ function renderSpendInputs(){
   try{ saved = JSON.parse(localStorage.getItem('card-picker-spend')||'{}'); }catch(e){}
   activeSpendCatIds.forEach(function(catId, idx){
     var row = el('div', {class:'row', style:'margin-bottom:6px;align-items:center;'});
-    var sel = el('select', {style:'width:260px;'}, buildCategorySelectOptions());
-    sel.value = catId;
-    sel.addEventListener('change', function(){
+    var catInput = el('input', {type:'text', list:'categoryDatalist', style:'width:280px;', placeholder:'카테고리 검색 (예: GS칼텍스, 카페)'});
+    catInput.value = catPath(catId);
+    function commitCategoryInput(){
+      var code = codeForCategoryInputText(catInput.value);
+      if(!code || code===catId){
+        catInput.style.borderColor = code ? '' : 'var(--bad)';
+        return;
+      }
       captureAndSaveSpend();
-      activeSpendCatIds[idx] = sel.value;
+      activeSpendCatIds[idx] = code;
       saveActiveCategories();
       renderSpendInputs();
+    }
+    catInput.addEventListener('change', commitCategoryInput);
+    catInput.addEventListener('input', function(){
+      catInput.style.borderColor = codeForCategoryInputText(catInput.value) ? '' : 'var(--bad)';
     });
     var input = el('input', {type:'number', id:'sp_row_'+idx, placeholder:'0', style:'width:130px;'});
     if(saved[catId]) input.value = saved[catId];
-    row.appendChild(sel);
+    row.appendChild(catInput);
     row.appendChild(input);
     row.appendChild(el('span', {class:'remove-x', text:'✕', onclick:function(){
       captureAndSaveSpend();
@@ -1143,6 +1188,8 @@ function refreshAll(){
   renderCompare();
   populateDetailSelect();
   if(state.cards.length) showDetail(state.cards[0].id);
+  populateCategoryDatalist();
+  renderQuickAddChips();
   renderSpendInputs();
   renderPriorityList();
   renderRanking();
