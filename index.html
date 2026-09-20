@@ -158,6 +158,10 @@ tr.clickable:hover{background:var(--accent-weak);}
           <div class="field"><label>&nbsp;</label><button class="btn" id="calcBtn">계산하기</button></div>
           <div class="field"><label>&nbsp;</label><button class="btn secondary" id="resetSpendBtn">금액 초기화</button></div>
         </div>
+        <label style="display:flex;align-items:center;gap:6px;font-size:12.5px;margin-top:12px;">
+          <input type="checkbox" id="includeMerchantLockedChk" style="width:auto;">
+          브랜드/가맹점 한정 혜택도 포함해서 계산 (예: 진에어 전용 할인, 스타벅스 전용 할인 등 — 기본은 제외)
+        </label>
       </div>
     </details>
 
@@ -450,6 +454,12 @@ var PRIORITY_CRITERIA = [
 ];
 function criterionById(id){ return PRIORITY_CRITERIA.filter(function(x){return x.id===id;})[0]; }
 
+var includeMerchantLocked = false;
+function saveIncludeMerchantLocked(){ try{ localStorage.setItem('card-picker-include-merchant-locked', includeMerchantLocked ? '1' : ''); }catch(e){} }
+function loadIncludeMerchantLocked(){
+  try{ includeMerchantLocked = localStorage.getItem('card-picker-include-merchant-locked') === '1'; }catch(e){ includeMerchantLocked = false; }
+}
+
 var activeSpendCatIds = [];
 function saveActiveCategories(){ try{ localStorage.setItem('card-picker-active-categories', JSON.stringify(activeSpendCatIds)); }catch(e){} }
 function loadActiveCategories(){
@@ -501,6 +511,8 @@ function renderPriorityList(){
 }
 loadPriorities();
 loadActiveCategories();
+loadIncludeMerchantLocked();
+document.getElementById('includeMerchantLockedChk').checked = includeMerchantLocked;
 
 /* ---------- 카드 상세 탭 ---------- */
 var RAW_LABEL_ORDER = ['연간 혜택','혜택','멤버십','마일리지','할인','적립','라운지','공항','발레파킹','Visa','카드사','이벤트','그외'];
@@ -540,8 +552,14 @@ function buildCardDetailBody(c, opts){
       var valueStr = '';
       if(b.type==='fixedDiscount') valueStr = won(b.amount) + (b.minSpend? (' ('+won(b.minSpend)+' 이상)') : '');
       else valueStr = (b.rate*100).toFixed(b.rate<0.01?2:1) + '%';
+      var catCell = el('td', {});
+      if(b.merchantLocked){
+        catCell.appendChild(el('span', {class:'badge untagged', text:'브랜드 한정: '+(b.merchants||[]).join('/')}));
+        catCell.appendChild(document.createElement('br'));
+      }
+      catCell.appendChild(document.createTextNode(cats + (excl? (' (제외: '+excl+')') : '')));
       tbody.appendChild(el('tr', {}, [
-        el('td', {text: cats + (excl? (' (제외: '+excl+')') : '')}),
+        catCell,
         el('td', {text: benefitTypeLabel(b.type)}),
         el('td', {text: valueStr}),
         el('td', {text: b.cap? won(b.cap) : '-'}),
@@ -651,6 +669,7 @@ function catSpendForBenefit(b, spend){
 }
 function benefitAmount(b, catSpend, cardTotalSpend, mileValue){
   if(cardTotalSpend < (b.minCardSpend||0)) return 0;
+  if(b.merchantLocked && !includeMerchantLocked) return 0;
   var amount = 0;
   if(b.type==='fixedDiscount'){
     amount = (catSpend >= (b.minSpend||0) && catSpend>0) ? b.amount : 0;
@@ -737,13 +756,19 @@ function renderRanking(){
     var btbody = el('tbody');
     r.lines.forEach(function(l){
       var cats = (l.benefit.categories||[]).map(function(id){ return state.metaCategories[id]?state.metaCategories[id].label:catLabel(id); }).join(', ');
+      var noteCell = el('td', {});
+      if(l.benefit.merchantLocked){
+        noteCell.appendChild(el('span', {class:'badge '+(includeMerchantLocked?'tagged':'untagged'), text:'브랜드 한정: '+(l.benefit.merchants||[]).join('/')+(includeMerchantLocked?'':' (제외됨)')}));
+        noteCell.appendChild(document.createTextNode(' '));
+      }
+      noteCell.appendChild(document.createTextNode([l.benefit.condition,l.benefit.note].filter(Boolean).join(' · ')));
       btbody.appendChild(el('tr', {}, [
         el('td', {text:cats}),
         el('td', {text:benefitTypeLabel(l.benefit.type)}),
         el('td', {text:won(l.catSpend)}),
         el('td', {}, [el('span', {class:'badge '+(l.thresholdMet?'tagged':'untagged'), text: l.thresholdMet?'충족':'미충족'})]),
         el('td', {text:won(l.amount)}),
-        el('td', {text:[l.benefit.condition,l.benefit.note].filter(Boolean).join(' · ')})
+        noteCell
       ]));
     });
     bt.appendChild(btbody);
@@ -765,6 +790,12 @@ function renderRanking(){
 }
 document.getElementById('calcBtn').addEventListener('click', renderRanking);
 document.getElementById('mileValue').addEventListener('change', renderRanking);
+document.getElementById('includeMerchantLockedChk').addEventListener('change', function(){
+  includeMerchantLocked = this.checked;
+  saveIncludeMerchantLocked();
+  renderRanking();
+  renderCombo();
+});
 document.getElementById('resetSpendBtn').addEventListener('click', function(){
   try{ localStorage.removeItem('card-picker-spend'); }catch(e){}
   renderSpendInputs();
@@ -787,6 +818,7 @@ function taggedCards(){
 function bestBenefitForCardCategory(card, catId, mileValue){
   var best = null;
   (card.benefits||[]).forEach(function(b){
+    if(b.merchantLocked && !includeMerchantLocked) return;
     var included = expandCategories(b.categories);
     var excluded = expandCategories(b.excludeCategories||[]);
     if(included.indexOf(catId)===-1 || excluded.indexOf(catId)!==-1) return;
@@ -928,8 +960,9 @@ function renderCombo(){
     var btbody = el('tbody');
     s.lines.forEach(function(l){
       var catNames = l.categoryIds.map(catLabel).join(', ');
+      var lockPrefix = l.benefit.merchantLocked ? ('[브랜드 한정: '+(l.benefit.merchants||[]).join('/')+'] ') : '';
       btbody.appendChild(el('tr', {}, [
-        el('td', {text: catNames + ' — ' + [l.benefit.condition,l.benefit.note].filter(Boolean).join(' · ')}),
+        el('td', {text: lockPrefix + catNames + ' — ' + [l.benefit.condition,l.benefit.note].filter(Boolean).join(' · ')}),
         el('td', {text: won(l.catSpend)}),
         el('td', {}, [el('span', {class:'badge '+(l.thresholdMet?'tagged':'untagged'), text: l.thresholdMet?'충족':'미충족'})]),
         el('td', {text: won(l.amount)})
